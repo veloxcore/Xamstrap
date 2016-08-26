@@ -298,7 +298,7 @@ namespace Xamstrap
                 _masterGrid.WidthRequest = 300;
             else
                 _masterGrid.WidthRequest = MasterWidth;
-            double widthProportionality = _masterGrid.WidthRequest / 1000;
+            double widthProportionality = _masterGrid.WidthRequest / this.Width;
             _masterGrid.SetValue(AbsoluteLayout.LayoutBoundsProperty, new Rectangle(0, 0, widthProportionality, 1));
 
             _detailGrid.SetValue(AbsoluteLayout.LayoutFlagsProperty, AbsoluteLayoutFlags.All);

@@ -2,16 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamstrapSample.MasterDetailSample"
-              xmlns:Control="clr-namespace:Xamstrap;assembly=Xamstrap" Title="Responsive MasterDetail">
+              xmlns:Control="clr-namespace:Xamstrap;assembly=Xamstrap" Title="Responsive Master Detail">
   <Control:ResponsiveMasterDetail x:Name="masterDetail" BackgroundColor="White">
     <Control:ResponsiveMasterDetail.MasterHeader>
       <Grid>
-        <Label Text="Master" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium"></Label>
+        <Label Text="Master" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"></Label>
       </Grid>
     </Control:ResponsiveMasterDetail.MasterHeader>
     <Control:ResponsiveMasterDetail.DetailHeader>
       <Grid>
-        <Label Text="Detail" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium"></Label>
+        <Label Text="Detail" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"></Label>
       </Grid>
     </Control:ResponsiveMasterDetail.DetailHeader>
     <Control:ResponsiveMasterDetail.MasterContent>

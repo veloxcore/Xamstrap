@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:Control="clr-namespace:Xamstrap;assembly=Xamstrap"
              xmlns:Attached="clr-namespace:Xamstrap.AttachedProperties;assembly=Xamstrap"
-            x:Class="XamstrapSample.ResponsiveUtils">
+             x:Class="XamstrapSample.ResponsiveUtils" Title="Visibility Sample">
   <StackLayout Orientation="Vertical">
     <Control:Div Attached:ResponsiveProperty.Class="hidden-xs hidden-sm" BackgroundColor="Blue">
       <Label Text="Test"></Label>

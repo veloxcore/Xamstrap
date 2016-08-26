@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:Control="clr-namespace:Xamstrap;assembly=Xamstrap"
              xmlns:Attached="clr-namespace:Xamstrap.AttachedProperties;assembly=Xamstrap"
-            x:Class="XamstrapSample.BackgroundHelperSample">
+            x:Class="XamstrapSample.BackgroundHelperSample" Title="Background Helper">
   <StackLayout Orientation="Vertical">
     <Control:Div Attached:ResponsiveProperty.Class="bg-primary" HeightRequest="50">
       <Label Text="Test"></Label>

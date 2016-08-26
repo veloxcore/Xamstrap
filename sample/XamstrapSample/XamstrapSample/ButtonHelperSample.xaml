@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:Control="clr-namespace:Xamstrap;assembly=Xamstrap"
              xmlns:Attached="clr-namespace:Xamstrap.AttachedProperties;assembly=Xamstrap"
-            x:Class="XamstrapSample.ButtonHelperSample">
+            x:Class="XamstrapSample.ButtonHelperSample" Title="Button Helper">
   <StackLayout Orientation="Vertical" BackgroundColor="White">
     <Button Text="Button" Attached:ResponsiveProperty.Class="btn-default btn-xs"></Button>
     <Button Text="Button" Attached:ResponsiveProperty.Class="btn-primary btn-sm"></Button>
@@ -20,7 +20,7 @@
       <Button Text="Button" Attached:ResponsiveProperty.Class="btn-warning"></Button>
       <Button Text="Button" Attached:ResponsiveProperty.Class="btn-danger"></Button>
       <Button Text="Button" Attached:ResponsiveProperty.Class="btn-link"></Button>
-      <Button Text="Button" BackgroundColor="Black"></Button>
+      <Button Text="Button" BackgroundColor="Black" TextColor="White"></Button>
     </Control:Div>
   </StackLayout>
 </ContentPage>
