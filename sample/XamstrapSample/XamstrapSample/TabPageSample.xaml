@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="XamstrapSample.TabPageSample"
+             xmlns:Control="clr-namespace:Xamstrap;assembly=Xamstrap" Title="Tab Page">
+  <Control:Tab TabHeaderTextColor="Black" TabHeaderBackgroundColor="White" IsFixedTab="False" >
+    <Control:Tab.TabItems>
+      <Control:TabItem Title="Hello">
+        <Label Text="Hello world" BackgroundColor="White" FontSize="25" TextColor="Gray"></Label>
+      </Control:TabItem>
+      <Control:TabItem Title="Moto">
+        <Label Text="Moto world" BackgroundColor="White" FontSize="25" TextColor="Gray"></Label>
+      </Control:TabItem>
+      <Control:TabItem Title="Hello2 sdjksdj sdjbajbcjhs">
+        <Label Text="Hello world 2" BackgroundColor="White" FontSize="25" TextColor="Gray"></Label>
+      </Control:TabItem>
+      <Control:TabItem Title="Moto 2">
+        <Label Text="Moto world 2" BackgroundColor="White" FontSize="25" TextColor="Gray"></Label>
+      </Control:TabItem>
+      <Control:TabItem Title="Hello 3" IsSelected="true">
+        <Label Text="Hello world 3" BackgroundColor="White" FontSize="25" TextColor="Gray"></Label>
+      </Control:TabItem>
+      <Control:TabItem Title="Moto 3">
+        <Label Text="Moto world 3" BackgroundColor="White" FontSize="25" TextColor="Gray"></Label>
+      </Control:TabItem>
+      <Control:TabItem Title="Hello 4" IsSelected="true">
+        <Label Text="Hello world 4" BackgroundColor="White" FontSize="25" TextColor="Gray"></Label>
+      </Control:TabItem>
+      <Control:TabItem Title="Moto 4">
+        <Label Text="Moto world 4" BackgroundColor="White" FontSize="25" TextColor="Gray"></Label>
+      </Control:TabItem>
+      <Control:TabItem Title="Hello 5" IsSelected="true">
+        <Label Text="Hello world 5" BackgroundColor="White" FontSize="25" TextColor="Gray"></Label>
+      </Control:TabItem>
+      <Control:TabItem Title="Moto 5">
+        <Label Text="Moto world 5" BackgroundColor="White" FontSize="25" TextColor="Gray"></Label>
+      </Control:TabItem>
+      <Control:TabItem Title="Hello 6" IsSelected="true">
+        <Label Text="Hello world 6" BackgroundColor="White" FontSize="25" TextColor="Gray"></Label>
+      </Control:TabItem>
+      <Control:TabItem Title="Moto 6">
+        <Label Text="Moto world 6" BackgroundColor="White" FontSize="25" TextColor="Gray"></Label>
+      </Control:TabItem>
+    </Control:Tab.TabItems>
+  </Control:Tab>
+</ContentPage>
