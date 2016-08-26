@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamstrapSample.MasterDetailSample"
+              xmlns:Control="clr-namespace:Xamstrap;assembly=Xamstrap" Title="Responsive MasterDetail">
+  <Control:ResponsiveMasterDetail x:Name="masterDetail" BackgroundColor="White">
+    <Control:ResponsiveMasterDetail.MasterHeader>
+      <Grid>
+        <Label Text="Master" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium"></Label>
+      </Grid>
+    </Control:ResponsiveMasterDetail.MasterHeader>
+    <Control:ResponsiveMasterDetail.DetailHeader>
+      <Grid>
+        <Label Text="Detail" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium"></Label>
+      </Grid>
+    </Control:ResponsiveMasterDetail.DetailHeader>
+    <Control:ResponsiveMasterDetail.MasterContent>
+      <StackLayout Orientation="Vertical">
+        <Label Text="This is master page content." HorizontalOptions="Start"></Label>
+        <Button x:Name="btnPress" Text="Press" BackgroundColor="Black" TextColor="White"></Button>
+      </StackLayout>
+    </Control:ResponsiveMasterDetail.MasterContent>
+    <Control:ResponsiveMasterDetail.DetailContent>
+      <StackLayout Orientation="Vertical">
+        <Label Text="This is detail page content."></Label>
+      </StackLayout>
+    </Control:ResponsiveMasterDetail.DetailContent>
+  </Control:ResponsiveMasterDetail>
+</ContentPage>

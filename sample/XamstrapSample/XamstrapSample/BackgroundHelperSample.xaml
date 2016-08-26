@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Control="clr-namespace:Xamstrap;assembly=Xamstrap"
+             xmlns:Attached="clr-namespace:Xamstrap.AttachedProperties;assembly=Xamstrap"
+            x:Class="XamstrapSample.BackgroundHelperSample">
+  <StackLayout Orientation="Vertical">
+    <Control:Div Attached:ResponsiveProperty.Class="bg-primary" HeightRequest="50">
+      <Label Text="Test"></Label>
+    </Control:Div>
+    <Control:Div Attached:ResponsiveProperty.Class="bg-success" HeightRequest="50">
+      <Label Text="Test"></Label>
+    </Control:Div>
+    <Control:Div Attached:ResponsiveProperty.Class="bg-info" HeightRequest="50">
+      <Label Text="Test"></Label>
+    </Control:Div>
+      <Control:Div Attached:ResponsiveProperty.Class="bg-warning" HeightRequest="50">
+      <Label Text="Test"></Label>
+    </Control:Div>
+    <Control:Div Attached:ResponsiveProperty.Class="bg-danger" HeightRequest="50">
+      <Label Text="Test"></Label>
+    </Control:Div>
+    <Button Text="Button"></Button>
+  </StackLayout>
+  
+</ContentPage>
