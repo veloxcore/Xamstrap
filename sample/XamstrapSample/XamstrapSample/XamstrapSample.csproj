@@ -68,9 +68,6 @@
     <Compile Include="MasterDetailSample.xaml.cs">
       <DependentUpon>MasterDetailSample.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PanelSample.xaml.cs">
-      <DependentUpon>PanelSample.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResponsiveUtils.xaml.cs">
       <DependentUpon>ResponsiveUtils.xaml</DependentUpon>
@@ -153,10 +150,6 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="InputGroupSample.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PanelSample.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
