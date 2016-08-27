@@ -13,7 +13,6 @@
       <Button Text="Input Group Sample" x:Name="sampleInputGroup"></Button>
       <Button Text="Button Group" x:Name="sampleButtonGroup"></Button>
       <Button Text="Text Helper" x:Name="sampleTextHelper"></Button>
-      <Button Text="Panel" x:Name="samplePanel"></Button>
       <Button Text="Button helper" x:Name="sampleButtonHelper"></Button>
       <Button Text="Background helper" x:Name="sampleBackgroundHelper"></Button>
       <Button Text="Tab Page" x:Name="sampleTabPage"></Button>

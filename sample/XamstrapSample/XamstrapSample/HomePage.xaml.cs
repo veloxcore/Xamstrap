@@ -22,7 +22,6 @@ namespace XamstrapSample
             sampleInputGroup.Clicked += SampleInputGroup_Clicked;
             sampleButtonGroup.Clicked += SampleButtonGroup_Clicked;
             sampleTextHelper.Clicked += SampleTextHelper_Clicked;
-            samplePanel.Clicked += SamplePanel_Clicked;
             sampleButtonHelper.Clicked += SampleButtonHelper_Clicked;
             sampleBackgroundHelper.Clicked += SampleBackgroundHelper_Clicked;
             sampleTabPage.Clicked += SampleTabPage_Clicked;
@@ -49,12 +48,7 @@ namespace XamstrapSample
         private void SampleInputGroup_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new InputGroupSample());
-        }
-
-        private void SamplePanel_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new PanelSample());
-        }
+        }       
 
         private void SampleTextHelper_Clicked(object sender, EventArgs e)
         {
