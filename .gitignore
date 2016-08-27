@@ -1,0 +1,14 @@
+sample/packages/*
+sample/XamstrapSample/XamstrapSample.Droid/obj/*
+sample/XamstrapSample/XamstrapSample.iOS/obj/*
+sample/XamstrapSample/XamstrapSample.iOS/bin/*
+sample/XamstrapSample/XamstrapSample/bin/*
+sample/XamstrapSample/XamstrapSample/obj/*
+src/Xamstrap/obj/*
+src/packages/*
+src/Xamstrap.Droid/obj/*
+src/Xamstrap.iOS/bin/*
+src/Xamstrap.iOS/obj/*
+*.user
+*.suo
+*.sln
