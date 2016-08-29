@@ -10,16 +10,23 @@ namespace Xamstrap
 {
     public class Common
     {
+        private static Application OriginalApp;
+
+        static Common()
+        {
+            OriginalApp = Application.Current;
+        }
+
         public static DeviceSize GetCurrentDeviceSize()
         {
             //TODO: revisit here as it sometime not works
-            return GetDeviceSize(Application.Current.MainPage.Width);
+            return GetDeviceSize(OriginalApp.MainPage.Width);
         }
 
         public static double GetCurrentScreenWidth()
         {
             //TODO: revisit here as it sometime not works
-            return Application.Current.MainPage.Width;
+            return OriginalApp.MainPage.Width;
         }
 
         public static DeviceSize GetDeviceSize(double width)

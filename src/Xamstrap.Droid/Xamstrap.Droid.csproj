@@ -97,11 +97,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResponsiveButtonRenderer.cs" />
     <Compile Include="ResponsiveLabelRenderer.cs" />
     <Compile Include="ScrollViewEXRenderer.cs" />
+    <Compile Include="ViewContainerRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

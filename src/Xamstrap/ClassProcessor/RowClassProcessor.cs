@@ -45,7 +45,7 @@ namespace Xamstrap.ClassProcessor
                 var request = child.Measure(width, height);
 
                 double childWidth;
-                if (request.Request.Width > 0)
+                if (child.WidthRequest > 0)
                     childWidth = request.Request.Width;
                 else
                     childWidth = width * columnWidthRequest;
@@ -125,7 +125,7 @@ namespace Xamstrap.ClassProcessor
                 var request = child.Measure(width, internalHeight);
 
                 double childWidth;
-                if (request.Request.Width > 0)
+                if (child.WidthRequest > 0)
                     childWidth = request.Request.Width;
                 else
                     childWidth = width * columnWidthRequest;
@@ -154,6 +154,7 @@ namespace Xamstrap.ClassProcessor
             height += lastChildHeight;
             height += element.Padding.VerticalThickness;
 
+            //width = double.IsInfinity(width) ? Common.GetCurrentScreenWidth() : width;
             return new SizeRequest(new Size(width, height), new Size(0, 0));
         }
 

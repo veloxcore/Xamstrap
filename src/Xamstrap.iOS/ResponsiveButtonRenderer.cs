@@ -19,31 +19,32 @@ namespace Xamstrap.iOS
         {
             base.OnElementChanged(e);
             thisButton = Control as UIButton;
-
             if (thisButton != null)
             {
                 thisButton.TitleLabel.LineBreakMode = UILineBreakMode.TailTruncation;
                 thisButton.TitleLabel.Lines = 1;
             }
-
-            List<string> classes = Element.GetValue(ResponsiveProperty.ClassProperty)?.ToString().Split(" ".ToCharArray()).ToList();
-
-            if (classes != null)
+            if (Element != null)
             {
-                ProcessButtonTheme(classes);
+                List<string> classes = Element.GetValue(ResponsiveProperty.ClassProperty)?.ToString().Split(" ".ToCharArray()).ToList();
 
-                ProcessButtonSize(classes);
-            }
+                if (classes != null)
+                {
+                    ProcessButtonTheme(classes);
 
-            var padding = (Xamarin.Forms.Thickness)Element.GetValue(ButtonProperty.PaddingProperty);
-            if (padding.Top != -100 && padding.Left != -100 && padding.Right != -100 && padding.Left != -100)
-            {
-                nfloat top = nfloat.Parse(padding.Top.ToString());
-                nfloat left = nfloat.Parse(padding.Left.ToString());
-                nfloat bottom = nfloat.Parse(padding.Bottom.ToString());
-                nfloat right = nfloat.Parse(padding.Right.ToString());
-                thisButton.ContentEdgeInsets = new UIEdgeInsets(top, left, bottom, right);
-                Element.HeightRequest = Element.FontSize + padding.VerticalThickness + 14;
+                    ProcessButtonSize(classes);
+                }
+
+                var padding = (Xamarin.Forms.Thickness)Element.GetValue(ButtonProperty.PaddingProperty);
+                if (padding.Top != -100 && padding.Left != -100 && padding.Right != -100 && padding.Left != -100)
+                {
+                    nfloat top = nfloat.Parse(padding.Top.ToString());
+                    nfloat left = nfloat.Parse(padding.Left.ToString());
+                    nfloat bottom = nfloat.Parse(padding.Bottom.ToString());
+                    nfloat right = nfloat.Parse(padding.Right.ToString());
+                    thisButton.ContentEdgeInsets = new UIEdgeInsets(top, left, bottom, right);
+                    Element.HeightRequest = Element.FontSize + padding.VerticalThickness + 14;
+                }
             }
         }
 
