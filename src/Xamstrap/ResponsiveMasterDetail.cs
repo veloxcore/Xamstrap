@@ -182,13 +182,15 @@ namespace Xamstrap
                     Page page = newValue as Page;
                     item._container = new ViewContainer();
                     item._container.Content = page;
-                    item._container.SetValue(Grid.RowProperty, 2);
+                    if (item.DetailHeader != null)
+                        item._container.SetValue(Grid.RowProperty, 2);
                     item._detailGrid.Children.Add(item._container);
                 }
                 else
                 {
                     View view = newValue as View;
-                    view.SetValue(Grid.RowProperty, 2);
+                    if (item.DetailHeader != null)
+                        view.SetValue(Grid.RowProperty, 2);
                     item._detailGrid.Children.Add(view);
                 }
             }
@@ -244,12 +246,12 @@ namespace Xamstrap
                 new RowDefinition {Height = GridLength.Star }
             };
 
-            _detailGrid.RowDefinitions = new RowDefinitionCollection
-            {
-                new RowDefinition {Height = 42 },
-                new RowDefinition {Height = 1 },
-                new RowDefinition {Height = GridLength.Star }
-            };
+            _detailGrid.RowDefinitions = new RowDefinitionCollection();
+            //{
+            //    new RowDefinition {Height = 42 },
+            //    new RowDefinition {Height = 1 },
+            //    new RowDefinition {Height = GridLength.Star }
+            //};
             this.Children.Add(_detailGrid);
             this.Children.Add(_overLay);
             this.Children.Add(_masterGrid);
@@ -265,8 +267,8 @@ namespace Xamstrap
             _horizontalLineDetail.HeightRequest = 1;
             _horizontalLineDetail.HorizontalOptions = LayoutOptions.FillAndExpand;
             _horizontalLineDetail.BackgroundColor = Color.Black;
-            Grid.SetRow(_horizontalLineDetail, 1);
-            _detailGrid.Children.Add(_horizontalLineDetail);
+            //Grid.SetRow(_horizontalLineDetail, 1);
+            //_detailGrid.Children.Add(_horizontalLineDetail);
 
             _verticalLine = new BoxView();
             _verticalLine.WidthRequest = 1;
@@ -310,7 +312,11 @@ namespace Xamstrap
             if (MasterContent != null)
                 _masterGrid.Children.Remove(MasterContent as View);
             if (DetailHeader != null)
+            {
                 _detailGrid.Children.Remove(DetailHeader as View);
+                _detailGrid.Children.Remove(_horizontalLineDetail);
+            }
+
             if (DetailContent != null)
             {
                 if (DetailContent is Page)
@@ -318,6 +324,21 @@ namespace Xamstrap
                 else
                     _detailGrid.Children.Remove(DetailContent as View);
             }
+
+            _detailGrid.RowDefinitions.Clear();
+            if (DetailHeader != null)
+            {
+                _detailGrid.RowDefinitions.Add(new RowDefinition { Height = 42 });
+                _detailGrid.RowDefinitions.Add(new RowDefinition { Height = 1 });
+                _detailGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Star });
+
+                Grid.SetRow(_horizontalLineDetail, 1);
+                _detailGrid.Children.Add(_horizontalLineDetail);
+            }
+            //else
+            //{
+            //    _detailGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Star });
+            //}
 
             Enums.DeviceSize deviceSize = Common.GetCurrentDeviceSize();
 
@@ -371,13 +392,20 @@ namespace Xamstrap
                 if (DetailContent is View)
                 {
                     var view = DetailContent as View;
-                    Grid.SetRow(view, 2);
+                    if (DetailHeader != null)
+                        Grid.SetRow(view, 2);
+                    //else
+                    //    Grid.SetRow(view, 0);
                     _detailGrid.Children.Add(view);
                 }
                 else if (DetailContent is Page)
                 {
                     _container.Content = DetailContent as Page;
-                    _container.SetValue(Grid.RowProperty, 2);
+                    if (DetailHeader != null)
+                        _container.SetValue(Grid.RowProperty, 2);
+                    //else
+                    //    _container.SetValue(Grid.RowProperty, 0);
+
                     _detailGrid.Children.Add(_container);
                 }
             }
