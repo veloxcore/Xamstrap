@@ -3,9 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamstrapSample.MasterDetailSample"
               xmlns:Control="clr-namespace:Xamstrap;assembly=Xamstrap" Title="Responsive Master Detail">
-  <Control:ResponsiveMasterDetail x:Name="masterDetail" BackgroundColor="White" Title="Primary">
+  <Control:ResponsiveMasterDetail x:Name="masterDetail" BackgroundColor="White" Title="Primary" ShowDetailHeader="False" CollapsableInMedium="True">
     <Control:ResponsiveMasterDetail.MasterHeader>
-      <Grid>
+      <Grid WidthRequest="400">
         <Label Text="Master" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"></Label>
       </Grid>
     </Control:ResponsiveMasterDetail.MasterHeader>
@@ -24,6 +24,8 @@
     <Control:ResponsiveMasterDetail.DetailContent>
       <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
         <Label Text="This is detail page content."></Label>
+        <Button x:Name="btnWidthChange" Text="Toggle Detail Header" TextColor="White" BackgroundColor="Black"></Button>
+        <Button x:Name="btnToggleMaster" Text="Toggle Master" TextColor="White" BackgroundColor="Black"></Button>
       </StackLayout>
     </Control:ResponsiveMasterDetail.DetailContent>
   </Control:ResponsiveMasterDetail>

@@ -60,7 +60,9 @@ namespace Xamstrap.ClassProcessor
                     xPos += childOffsetWidth;
                 }
                 totalChildRowWidth += childWidth;
-                if (totalChildRowWidth > width)
+
+                // Hack: as totalChildRowWidth and Width both coming as same number but minor difference in decimal places, hence comparing it with 0.1
+                if (totalChildRowWidth - width > 0.1)
                 {
                     yPos += lastChildHeight;
                     lastChildHeight = childHeight;
@@ -140,7 +142,8 @@ namespace Xamstrap.ClassProcessor
                 }
                 totalChildRowWidth += childWidth;
 
-                if (totalChildRowWidth > width)
+                // Hack: as totalChildRowWidth and Width both coming as same number but minor difference in decimal places, hence comparing it with 0.1
+                if (totalChildRowWidth - width > 0.1)
                 {
                     height += lastChildHeight;
                     lastChildHeight = childHeight;

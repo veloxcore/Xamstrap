@@ -33,28 +33,41 @@ namespace Xamstrap
             set { SetValue(TitleProperty, value); }
         }
 
-        public static readonly BindableProperty IsDetailVisibleProperty =
-            BindableProperty.Create("IsDetailVisible", typeof(bool), typeof(ResponsiveMasterDetail),
+        public static readonly BindableProperty IsMasterVisibleProperty =
+            BindableProperty.Create("IsMasterVisible", typeof(bool), typeof(ResponsiveMasterDetail),
                 defaultValue: default(bool),
                 defaultBindingMode: BindingMode.TwoWay,
                 validateValue: null,
-                propertyChanged: OnIsDetailVisibleChanged);
-        public bool IsDetailVisible
+                propertyChanged: OnIsMasterVisibleChanged);
+        public bool IsMasterVisible
         {
-            get { return (bool)GetValue(IsDetailVisibleProperty); }
-            set { SetValue(IsDetailVisibleProperty, value); }
+            get { return (bool)GetValue(IsMasterVisibleProperty); }
+            set { SetValue(IsMasterVisibleProperty, value); }
         }
-        private static void OnIsDetailVisibleChanged(BindableObject bindable, object oldValue, object newValue)
+        private static void OnIsMasterVisibleChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var item = (ResponsiveMasterDetail)bindable;
             if (newValue == oldValue)
                 return;
+
             bool newVal = Convert.ToBoolean(newValue);
 
             Enums.DeviceSize deviceSize = Common.GetCurrentDeviceSize();
-            if (deviceSize.Equals(Enums.DeviceSize.Small))
+            if (item.CollapsableInMedium && (deviceSize.Equals(Enums.DeviceSize.Medium) || deviceSize.Equals(Enums.DeviceSize.Large) || deviceSize.Equals(Enums.DeviceSize.ExtraLarge)))
             {
-                if (!newVal)
+                if (newVal)
+                {
+                    item._masterGrid.WidthRequest = item.MasterWidth;
+                }
+                else
+                {
+                    item._masterGrid.WidthRequest = item.CollapsedMediumMasterWidth;
+                }
+                item.ArrangeMediumContent();
+            }
+            else if (deviceSize.Equals(Enums.DeviceSize.Small))
+            {
+                if (newVal)
                 {
                     if (item._buttonBack != null)
                         item._buttonBack.SetValue(AbsoluteLayout.LayoutBoundsProperty, new Rectangle(item._masterGrid.Width - 1, 0, item._buttonBack.Width, item._buttonBack.Height));
@@ -71,7 +84,7 @@ namespace Xamstrap
             }
             else if (deviceSize.Equals(Enums.DeviceSize.ExtraSmall))
             {
-                if (newVal)
+                if (!newVal)
                 {
                     if (item._buttonBack != null)
                         item._buttonBack.IsVisible = true;
@@ -88,9 +101,8 @@ namespace Xamstrap
 
         public static readonly BindableProperty MasterWidthProperty =
             BindableProperty.Create("MasterWidth", typeof(double), typeof(ResponsiveMasterDetail),
-                defaultValue: -1d,
-                defaultBindingMode: BindingMode.TwoWay,
-                validateValue: null);
+                defaultValue: 300d,
+                defaultBindingMode: BindingMode.TwoWay);
         public double MasterWidth
         {
             get { return (double)GetValue(MasterWidthProperty); }
@@ -141,7 +153,7 @@ namespace Xamstrap
 
             if (oldValue != null)
                 item._detailGrid.Children.Remove(oldValue as View);
-            if (newValue != null)
+            if (newValue != null && item.ShowDetailHeader)
             {
                 View view = newValue as View;
                 view.SetValue(Grid.RowProperty, 0);
@@ -179,17 +191,15 @@ namespace Xamstrap
             {
                 if (newValue is Page)
                 {
-                    Page page = newValue as Page;
-                    item._container = new ViewContainer();
-                    item._container.Content = page;
-                    if (item.DetailHeader != null)
+                    item._container.Content = newValue as Page;
+                    if (item.ShowDetailHeader)
                         item._container.SetValue(Grid.RowProperty, 2);
                     item._detailGrid.Children.Add(item._container);
                 }
                 else
                 {
                     View view = newValue as View;
-                    if (item.DetailHeader != null)
+                    if (item.ShowDetailHeader)
                         view.SetValue(Grid.RowProperty, 2);
                     item._detailGrid.Children.Add(view);
                 }
@@ -221,6 +231,94 @@ namespace Xamstrap
                 view.SetValue(Grid.RowProperty, 2);
                 item._detailGrid.Children.Add(view);
             }
+        }
+
+        public static readonly BindableProperty ShowDetailHeaderProperty =
+            BindableProperty.Create("ShowDetailHeader", typeof(bool), typeof(ResponsiveMasterDetail),
+                defaultValue: true,
+                defaultBindingMode: BindingMode.TwoWay,
+                propertyChanged: OnShowDetailHeaderChanged);
+        public bool ShowDetailHeader
+        {
+            get { return (bool)GetValue(ShowDetailHeaderProperty); }
+            set { SetValue(ShowDetailHeaderProperty, value); }
+        }
+        public static void OnShowDetailHeaderChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var item = (ResponsiveMasterDetail)bindable;
+            if (newValue == oldValue)
+                return;
+
+            bool newVal = (bool)newValue;
+            item._detailGrid.RowDefinitions.Clear();
+            if (newVal)
+            {
+                item._detailGrid.RowDefinitions.Add(new RowDefinition { Height = 42 });
+                item._detailGrid.RowDefinitions.Add(new RowDefinition { Height = 1 });
+                item._detailGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Star });
+                if (item.DetailHeader != null)
+                {
+                    View view = item.DetailHeader as View;
+                    view.SetValue(Grid.RowProperty, 0);
+                    item._detailGrid.Children.Add(view);
+                }
+                item._horizontalLineDetail.SetValue(Grid.RowProperty, 1);
+                item._detailGrid.Children.Add(item._horizontalLineDetail);
+                if (item.DetailContent != null)
+                {
+                    View view = item.DetailContent as View;
+                    view.SetValue(Grid.RowProperty, 2);
+                    item._detailGrid.Children.Add(view);
+                }
+            }
+            else
+            {
+                item._detailGrid.Children.Remove(item._horizontalLineDetail);
+                if (item.DetailHeader != null)
+                    item._detailGrid.Children.Remove(item.DetailHeader as View);
+                if (item.DetailContent != null)
+                {
+                    item._detailGrid.Children.Remove(item.DetailContent as View);
+                    item.DetailContent.SetValue(Grid.RowProperty, 0);
+                    item._detailGrid.Children.Add(item.DetailContent as View);
+                }
+            }
+        }
+
+        public static readonly BindableProperty CollapsableInMediumProperty =
+             BindableProperty.Create("CollapsableInMedium", typeof(bool), typeof(ResponsiveMasterDetail),
+                 defaultValue: default(bool),
+                 defaultBindingMode: BindingMode.TwoWay,
+                 validateValue: null,
+                 propertyChanged: OnCollapsableInMediumChanged);
+        public bool CollapsableInMedium
+        {
+            get { return (bool)GetValue(CollapsableInMediumProperty); }
+            set { SetValue(CollapsableInMediumProperty, value); }
+        }
+        private static void OnCollapsableInMediumChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var item = (ResponsiveMasterDetail)bindable;
+            if (newValue == oldValue)
+                return;
+        }
+
+        public static readonly BindableProperty CollapsedMediumMasterWidthProperty =
+            BindableProperty.Create("CollapsedMediumMasterWidth", typeof(double), typeof(ResponsiveMasterDetail),
+                defaultValue: 48d,
+                defaultBindingMode: BindingMode.TwoWay,
+                validateValue: null,
+                propertyChanged: OnCollapsedMediumMasterWidthChanged);
+        public double CollapsedMediumMasterWidth
+        {
+            get { return (double)GetValue(CollapsedMediumMasterWidthProperty); }
+            set { SetValue(CollapsedMediumMasterWidthProperty, value); }
+        }
+        private static void OnCollapsedMediumMasterWidthChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var item = (ResponsiveMasterDetail)bindable;
+            if (newValue == oldValue)
+                return;
         }
         #endregion
 
@@ -256,17 +354,11 @@ namespace Xamstrap
             this.Children.Add(_overLay);
             this.Children.Add(_masterGrid);
 
-            _horizontalLine = new BoxView();
-            _horizontalLine.HeightRequest = 1;
-            _horizontalLine.HorizontalOptions = LayoutOptions.FillAndExpand;
-            _horizontalLine.BackgroundColor = Color.Black;
+            _horizontalLine = GetHorizontalLine();
             Grid.SetRow(_horizontalLine, 1);
             _masterGrid.Children.Add(_horizontalLine);
 
-            _horizontalLineDetail = new BoxView();
-            _horizontalLineDetail.HeightRequest = 1;
-            _horizontalLineDetail.HorizontalOptions = LayoutOptions.FillAndExpand;
-            _horizontalLineDetail.BackgroundColor = Color.Black;
+            _horizontalLineDetail = GetHorizontalLine();
             //Grid.SetRow(_horizontalLineDetail, 1);
             //_detailGrid.Children.Add(_horizontalLineDetail);
 
@@ -283,7 +375,7 @@ namespace Xamstrap
 
         private void Tap_Tapped(object sender, EventArgs e)
         {
-            IsDetailVisible = true;
+            IsMasterVisible = false;
         }
 
         #endregion
@@ -312,11 +404,7 @@ namespace Xamstrap
             if (MasterContent != null)
                 _masterGrid.Children.Remove(MasterContent as View);
             if (DetailHeader != null)
-            {
                 _detailGrid.Children.Remove(DetailHeader as View);
-                _detailGrid.Children.Remove(_horizontalLineDetail);
-            }
-
             if (DetailContent != null)
             {
                 if (DetailContent is Page)
@@ -326,8 +414,9 @@ namespace Xamstrap
             }
 
             _detailGrid.RowDefinitions.Clear();
-            if (DetailHeader != null)
+            if (ShowDetailHeader)
             {
+                _detailGrid.Children.Remove(_horizontalLineDetail);
                 _detailGrid.RowDefinitions.Add(new RowDefinition { Height = 42 });
                 _detailGrid.RowDefinitions.Add(new RowDefinition { Height = 1 });
                 _detailGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Star });
@@ -360,10 +449,10 @@ namespace Xamstrap
 
         private void _buttonSlide_Clicked(object sender, EventArgs e)
         {
-            if (IsDetailVisible)
-                IsDetailVisible = false;
+            if (IsMasterVisible)
+                IsMasterVisible = false;
             else
-                IsDetailVisible = true;
+                IsMasterVisible = true;
         }
         #endregion
 
@@ -377,7 +466,7 @@ namespace Xamstrap
                 _masterGrid.Children.Add(view);
             }
 
-            if (DetailHeader != null)
+            if (DetailHeader != null && ShowDetailHeader)
             {
                 var view = DetailHeader as View;
                 Grid.SetRow(view, 0);
@@ -392,20 +481,15 @@ namespace Xamstrap
                 if (DetailContent is View)
                 {
                     var view = DetailContent as View;
-                    if (DetailHeader != null)
+                    if (ShowDetailHeader)
                         Grid.SetRow(view, 2);
-                    //else
-                    //    Grid.SetRow(view, 0);
                     _detailGrid.Children.Add(view);
                 }
                 else if (DetailContent is Page)
                 {
                     _container.Content = DetailContent as Page;
-                    if (DetailHeader != null)
+                    if (ShowDetailHeader)
                         _container.SetValue(Grid.RowProperty, 2);
-                    //else
-                    //    _container.SetValue(Grid.RowProperty, 0);
-
                     _detailGrid.Children.Add(_container);
                 }
             }
@@ -413,7 +497,7 @@ namespace Xamstrap
 
         private void LayoutExtraSmall()
         {
-            IsDetailVisible = false;
+            IsMasterVisible = true;
             _overLay.IsVisible = false;
             _masterGrid.SetValue(AbsoluteLayout.LayoutFlagsProperty, AbsoluteLayoutFlags.SizeProportional);
             _masterGrid.BackgroundColor = _masterGridHeader.BackgroundColor;
@@ -438,13 +522,10 @@ namespace Xamstrap
 
         private void LayoutSmall()
         {
-            IsDetailVisible = true;
+            IsMasterVisible = false;
             _masterGrid.SetValue(AbsoluteLayout.LayoutFlagsProperty, AbsoluteLayoutFlags.HeightProportional);
             _masterGrid.BackgroundColor = _masterGridHeader.BackgroundColor;
-            if (MasterWidth == -1)
-                _masterGrid.WidthRequest = 300;
-            else
-                _masterGrid.WidthRequest = MasterWidth;
+            _masterGrid.WidthRequest = MasterWidth;
 
             _masterGrid.SetValue(AbsoluteLayout.LayoutBoundsProperty, new Rectangle(-_masterGrid.WidthRequest, 0, _masterGrid.WidthRequest, 1));
 
@@ -466,16 +547,27 @@ namespace Xamstrap
         {
             _overLay.IsVisible = false;
             _masterGrid.SetValue(AbsoluteLayout.LayoutFlagsProperty, AbsoluteLayoutFlags.All);
+            _detailGrid.SetValue(AbsoluteLayout.LayoutFlagsProperty, AbsoluteLayoutFlags.All);
             _masterGrid.BackgroundColor = _masterGridHeader.BackgroundColor;
-            if (MasterWidth == -1)
-                _masterGrid.WidthRequest = 300;
+            if (CollapsableInMedium && !IsMasterVisible)
+                _masterGrid.WidthRequest = CollapsedMediumMasterWidth;
             else
                 _masterGrid.WidthRequest = MasterWidth;
+
+            ArrangeMediumContent();
+        }
+
+        private void ArrangeMediumContent()
+        {
             double widthProportionality = _masterGrid.WidthRequest / this.Width;
             _masterGrid.SetValue(AbsoluteLayout.LayoutBoundsProperty, new Rectangle(0, 0, widthProportionality, 1));
 
-            _detailGrid.SetValue(AbsoluteLayout.LayoutFlagsProperty, AbsoluteLayoutFlags.All);
             _detailGrid.SetValue(AbsoluteLayout.LayoutBoundsProperty, new Rectangle(1, 0, 1 - widthProportionality, 1));
+        }
+
+        private BoxView GetHorizontalLine()
+        {
+            return new BoxView() { HeightRequest = 1, BackgroundColor = Color.Black, HorizontalOptions = LayoutOptions.FillAndExpand };
         }
         #endregion
     }
