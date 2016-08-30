@@ -157,7 +157,7 @@ namespace Xamstrap.ClassProcessor
             height += lastChildHeight;
             height += element.Padding.VerticalThickness;
 
-            //width = double.IsInfinity(width) ? Common.GetCurrentScreenWidth() : width;
+            width = double.IsInfinity(width) ? Common.GetCurrentScreenWidth() : width;
             return new SizeRequest(new Size(width, height), new Size(0, 0));
         }
 
