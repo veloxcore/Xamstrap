@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{67F9D3A8-F71E-4428-913F-C37AE82CDB24}</ProjectGuid>
+    <ProjectGuid>{CF62F14A-D98E-490E-9922-CA000AB5E9AB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Xamstrap</RootNamespace>
@@ -45,7 +45,6 @@
     <Compile Include="ClassProcessor\FormInlineClassProcessor.cs" />
     <Compile Include="ClassProcessor\InputGroupClassProcessor.cs" />
     <Compile Include="ClassProcessor\RowClassProcessor.cs" />
-    <Compile Include="ClassProcessor\VisibilityClassProcessor.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="Constant.cs" />
     <Compile Include="Div.cs" />

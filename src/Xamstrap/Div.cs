@@ -28,46 +28,30 @@ namespace Xamstrap
 
                 if (classes != null)
                 {
-                    ProcessBackgroundColorElement(classes);
-
                     if (classes.Any(o => o.Equals(Constant.Row)))
-                    {
                         this.ProcessRowClass(x, y, width, height);
-                    }
 
                     if (classes.Any(o => o.Equals(Constant.FormBasic)))
-                    {
                         this.ProcessFormBasicClass(x, y, width, height);
-                    }
 
                     if (classes.Any(o => o.Equals(Constant.FormHorizontal)))
-                    {
                         this.ProcessRowClass(x, y, width, height);
-                    }
 
                     if (classes.Any(o => o.Equals(Constant.FormInLine)))
-                    {
                         this.ProcessInlineClass(x, y, width, height);
-                    }
 
                     if (classes.Any(o => o.Equals(Constant.ButtonGroup)))
-                    {
                         this.ProcessButtonGroupClass(x, y, width, height);
-                    }
 
                     if (classes.Any(o => o.Equals(Constant.ButtonGroupJustified)))
-                    {
                         this.ProcessButtonJustifiedClass(x, y, width, height);
-                    }
+
+                    if (classes.Any(o => o.Equals(Constant.InputGroup)))
+                        this.ProcessInputGroupClass(x, y, width, height);
 
                     if (classes.Any(o => o.Equals(Constant.Panel)))
                     {
-
-                    }
-
-                    if (classes.Any(o => o.Equals(Constant.InputGroup)))
-                    {
-                        this.ProcessInputGroupClass(x, y, width, height);
+                        //Not Yet Implemented 
                     }
                 }
             }
@@ -79,19 +63,13 @@ namespace Xamstrap
 
             Enums.DeviceSize deviceSize = Common.GetCurrentDeviceSize();
 
-            SizeRequest sizeRequest = this.ProcessCommonSizeRequest(widthConstraint, heightConstraint);
+            SizeRequest sizeRequest = new SizeRequest();
 
-            if (classes != null)
+            if (!double.IsPositiveInfinity(widthConstraint))
+                sizeRequest = this.ProcessCommonSizeRequest(widthConstraint, heightConstraint);
+
+            if (classes != null && !double.IsPositiveInfinity(widthConstraint))
             {
-                if (classes.Any(o => o.Equals($"hidden-{deviceSize.Tag()}")))
-                {
-                    if (this.HeightRequest > 0)
-                        OriginalElementHeight = this.HeightRequest;
-                    sizeRequest = this.ProcessVisibilitySizeRequest(widthConstraint, heightConstraint);
-                }
-                else if (OriginalElementHeight > 0)
-                    this.HeightRequest = OriginalElementHeight;
-
                 if (classes.Any(o => o.Equals(Constant.Row)) || classes.Any(o => o.Equals(Constant.FormHorizontal)))
                     sizeRequest = this.ProcessRowSizeRequest(widthConstraint, heightConstraint);
 
@@ -113,48 +91,6 @@ namespace Xamstrap
             }
 
             return sizeRequest;
-        }
-
-        #endregion
-
-        #region "Private Methods"
-
-        private void ProcessBackgroundColorElement(List<string> classes)
-        {
-            object backgroundColor = null;
-            if (classes.Any(o => o.Equals(Constant.BGPrimary)))
-            {
-                Application.Current.Resources?.TryGetValue(Constant.BGPrimary, out backgroundColor);
-                if (backgroundColor == null)
-                    backgroundColor = "#337ab7";
-            }
-            else if (classes.Any(o => o.Equals(Constant.BGSuccess)))
-            {
-                Application.Current.Resources?.TryGetValue(Constant.BGSuccess, out backgroundColor);
-                if (backgroundColor == null)
-                    backgroundColor = "#dff0d8";
-            }
-            else if (classes.Any(o => o.Equals(Constant.BGInfo)))
-            {
-                Application.Current.Resources?.TryGetValue(Constant.BGInfo, out backgroundColor);
-                if (backgroundColor == null)
-                    backgroundColor = "#d9edf7";
-            }
-            else if (classes.Any(o => o.Equals(Constant.BGWarning)))
-            {
-                Application.Current.Resources?.TryGetValue(Constant.BGWarning, out backgroundColor);
-                if (backgroundColor == null)
-                    backgroundColor = "#fcf8e3";
-            }
-            else if (classes.Any(o => o.Equals(Constant.BGDanger)))
-            {
-                Application.Current.Resources?.TryGetValue(Constant.BGDanger, out backgroundColor);
-                if (backgroundColor == null)
-                    backgroundColor = "#f2dede";
-            }
-
-            if (backgroundColor != null)
-                this.BackgroundColor = Color.FromHex(backgroundColor.ToString());
         }
 
         #endregion

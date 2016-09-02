@@ -215,9 +215,9 @@ namespace Xamstrap.ClassProcessor
                 List<string> classes = property.ToString().Split(" ".ToCharArray()).ToList();
                 string columnStartString = $"col-{deviceSize.Tag()}-";
 
-                if (classes.Any(o => o.StartsWith(columnStartString)))
+                if (classes.Any(o => o.StartsWith(columnStartString) && !o.Contains("offset")))
                 {
-                    value = Convert.ToInt16(classes.Where(o => o.StartsWith(columnStartString)).First().TrimStart(columnStartString.ToCharArray()));
+                    value = Convert.ToInt16(classes.Where(o => o.StartsWith(columnStartString) && !o.Contains("offset")).First().TrimStart(columnStartString.ToCharArray()));
                 }
             }
 

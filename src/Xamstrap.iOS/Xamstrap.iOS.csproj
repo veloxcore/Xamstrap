@@ -58,6 +58,7 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DivRenderer.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResponsiveButtonRenderer.cs" />
@@ -71,7 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xamstrap\Xamstrap.csproj">
-      <Project>{67F9D3A8-F71E-4428-913F-C37AE82CDB24}</Project>
+      <Project>{cf62f14a-d98e-490e-9922-ca000ab5e9ab}</Project>
       <Name>Xamstrap</Name>
     </ProjectReference>
   </ItemGroup>

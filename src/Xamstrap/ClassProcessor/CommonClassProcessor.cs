@@ -34,9 +34,14 @@ namespace Xamstrap.ClassProcessor
 
             double internalHeight = double.IsPositiveInfinity(heightConstraint) ? double.PositiveInfinity : Math.Max(0, heightConstraint);
             double internalWidth = double.IsPositiveInfinity(widthConstraint) ? double.PositiveInfinity : Math.Max(0, widthConstraint);
-
-            // Measure children height
             double height = 0d;
+
+            if (element.Children.Count == 0)
+            {
+                internalWidth = Math.Max(0, Math.Min(element.WidthRequest, widthConstraint));
+                height = internalHeight = Math.Max(0, Math.Min(element.HeightRequest, heightConstraint));
+            }
+            // Measure children height
             foreach (var child in element.Children)
             {
                 var size = child.Measure(internalWidth, internalHeight);
