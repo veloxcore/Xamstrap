@@ -70,7 +70,7 @@ namespace Xamstrap
                 if (newVal)
                 {
                     if (item._buttonBack != null)
-                        item._buttonBack.SetValue(AbsoluteLayout.LayoutBoundsProperty, new Rectangle(item._masterGrid.Width - 1, 0, item._buttonBack.Width, item._buttonBack.Height));
+                        item._buttonBack.SetValue(AbsoluteLayout.LayoutBoundsProperty, new Rectangle(item._masterGrid.Width, 0, item._buttonBack.Width, item._buttonBack.Height));
                     item._masterGrid.SetValue(AbsoluteLayout.LayoutBoundsProperty, new Rectangle(0, 0, item._masterGrid.Width, 1));
                     item._overLay.IsVisible = true;
                 }
@@ -358,6 +358,11 @@ namespace Xamstrap
                 new RowDefinition {Height = 1 },
                 new RowDefinition {Height = GridLength.Star }
             };
+            _masterGrid.ColumnDefinitions = new ColumnDefinitionCollection
+            {
+                new ColumnDefinition() {Width = GridLength.Star },
+                new ColumnDefinition() { Width = 1 }
+            };
 
             _detailGrid.RowDefinitions = new RowDefinitionCollection();
             //{
@@ -371,6 +376,7 @@ namespace Xamstrap
 
             _horizontalLine = GetHorizontalLine();
             Grid.SetRow(_horizontalLine, 1);
+            Grid.SetColumnSpan(_horizontalLine, 2);
             _masterGrid.Children.Add(_horizontalLine);
 
             //Grid.SetRow(_horizontalLineDetail, 1);
@@ -381,6 +387,7 @@ namespace Xamstrap
             _verticalLine.HorizontalOptions = LayoutOptions.End;
             _verticalLine.VerticalOptions = LayoutOptions.FillAndExpand;
             _verticalLine.BackgroundColor = Color.Black;
+            _verticalLine.SetValue(Grid.ColumnProperty, 1);
             _verticalLine.SetValue(Grid.RowSpanProperty, 3);
             _masterGrid.Children.Add(_verticalLine);
 
@@ -481,10 +488,7 @@ namespace Xamstrap
 
         private void _buttonSlide_Clicked(object sender, EventArgs e)
         {
-            if (IsMasterVisible)
-                IsMasterVisible = false;
-            else
-                IsMasterVisible = true;
+            IsMasterVisible = !IsMasterVisible;
         }
         #endregion
 
@@ -567,11 +571,11 @@ namespace Xamstrap
             _detailGrid.SetValue(AbsoluteLayout.LayoutFlagsProperty, AbsoluteLayoutFlags.All);
             _detailGrid.SetValue(AbsoluteLayout.LayoutBoundsProperty, new Rectangle(0, 0, 1, 1));
 
-            _buttonBack.Text = "Menu";
+            _buttonBack.Image = "menuPrimary.png";
             _buttonBack.IsVisible = true;
-            _buttonBack.SetValue(AbsoluteLayout.LayoutBoundsProperty, new Rectangle(0, 0, 80, 40));
+            _buttonBack.SetValue(AbsoluteLayout.LayoutBoundsProperty, new Rectangle(0, 0, 40, 42));
             _buttonBack.BackgroundColor = _masterGridHeader.BackgroundColor;
-            _buttonBack.BorderRadius = 1;
+            _buttonBack.BorderRadius = 0;
             _buttonBack.VerticalOptions = LayoutOptions.Center;
             _verticalLine.IsVisible = true;
         }

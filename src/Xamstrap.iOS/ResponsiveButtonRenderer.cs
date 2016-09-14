@@ -14,7 +14,12 @@ namespace Xamstrap.iOS
 {
     public class ResponsiveButtonRenderer : ButtonRenderer
     {
-        UIButton thisButton;
+        private UIButton thisButton;
+        private Color originalBackgroundColor;
+        private Color pressedBackgroundColor;
+        private Color pressedTextColor;
+        private Color originalTextColor;
+
         protected override void OnElementChanged(ElementChangedEventArgs<Button> e)
         {
             base.OnElementChanged(e);
@@ -44,6 +49,74 @@ namespace Xamstrap.iOS
                     nfloat right = nfloat.Parse(padding.Right.ToString());
                     thisButton.ContentEdgeInsets = new UIEdgeInsets(top, left, bottom, right);
                     Element.HeightRequest = Element.FontSize + padding.VerticalThickness + 14;
+                }
+
+                // Handle PressedBackgroundColor
+                object pressedBGColor;
+                pressedBGColor = Element.GetValue(ButtonProperty.PressedBackgroundColorProperty);
+                if (pressedBGColor != null)
+                {
+                    pressedBackgroundColor = (Xamarin.Forms.Color)pressedBGColor;
+                    if (!pressedBackgroundColor.Equals(Color.Default))
+                    {
+                        // No Default value here, means set the button click background events
+                        originalBackgroundColor = Element.BackgroundColor;
+
+                        //Handle Foregroundcolor
+                        pressedTextColor = (Color)Element.GetValue(ButtonProperty.PressedTextColorProperty);
+                        if (!pressedTextColor.Equals(Color.Default))
+                        {
+                            originalTextColor = Element.TextColor;
+                        }
+
+                        thisButton.TouchDown += ButtonTouchDown;
+                        thisButton.TouchUpInside += ButtonTouchUp;
+                        thisButton.TouchUpOutside += ButtonTouchUp;
+
+                        thisButton.ImageEdgeInsets = new UIEdgeInsets(thisButton.ImageEdgeInsets.Top, 0, thisButton.ImageEdgeInsets.Bottom, 0);
+                    }
+                }
+
+                // Handle Horizontal Content Alignment
+                var horizontalContentAlignment = (ButtonProperty.HorizontalContentAlignmentType)Element.GetValue(ButtonProperty.HorizontalContentAlignmentProperty);
+                if (horizontalContentAlignment != ButtonProperty.HorizontalContentAlignmentType.PlatformDefault)
+                {
+                    switch (horizontalContentAlignment)
+                    {
+                        case ButtonProperty.HorizontalContentAlignmentType.Fill:
+                            thisButton.HorizontalAlignment = UIControlContentHorizontalAlignment.Fill;
+                            break;
+                        case ButtonProperty.HorizontalContentAlignmentType.Left:
+                            thisButton.HorizontalAlignment = UIControlContentHorizontalAlignment.Left;
+                            break;
+                        case ButtonProperty.HorizontalContentAlignmentType.Right:
+                            thisButton.HorizontalAlignment = UIControlContentHorizontalAlignment.Right;
+                            break;
+                        case ButtonProperty.HorizontalContentAlignmentType.Centre:
+                            thisButton.HorizontalAlignment = UIControlContentHorizontalAlignment.Center;
+                            break;
+                    }
+                }
+
+                // Handle Vertical Content Alignment
+                var verticalContentAlignment = (ButtonProperty.VerticalContentAlignmentType)Element.GetValue(ButtonProperty.VerticalContentAlignmentProperty);
+                if (verticalContentAlignment != ButtonProperty.VerticalContentAlignmentType.PlatformDefault)
+                {
+                    switch (verticalContentAlignment)
+                    {
+                        case ButtonProperty.VerticalContentAlignmentType.Fill:
+                            thisButton.VerticalAlignment = UIControlContentVerticalAlignment.Fill;
+                            break;
+                        case ButtonProperty.VerticalContentAlignmentType.Top:
+                            thisButton.VerticalAlignment = UIControlContentVerticalAlignment.Top;
+                            break;
+                        case ButtonProperty.VerticalContentAlignmentType.Bottom:
+                            thisButton.VerticalAlignment = UIControlContentVerticalAlignment.Bottom;
+                            break;
+                        case ButtonProperty.VerticalContentAlignmentType.Centre:
+                            thisButton.VerticalAlignment = UIControlContentVerticalAlignment.Center;
+                            break;
+                    }
                 }
             }
         }
@@ -341,6 +414,45 @@ namespace Xamstrap.iOS
             nfloat right = nfloat.Parse(15.ToString());
             thisButton.ContentEdgeInsets = new UIEdgeInsets(top, left, bottom, right);
             Element.HeightRequest = Element.FontSize + 30;
+        }
+
+        private void ButtonTouchUp(object sender, EventArgs e)
+        {
+            try
+            {
+                thisButton.Highlighted = false;
+                Element.BackgroundColor = originalBackgroundColor;
+                Element.TextColor = originalTextColor;
+            }
+            catch (Exception)
+            {
+                // Do nothing, just swallow it
+            }
+        }
+
+        private void ButtonTouchDown(object sender, EventArgs e)
+        {
+            try
+            {
+                thisButton.Highlighted = false;
+                Element.BackgroundColor = pressedBackgroundColor;
+                Element.TextColor = pressedTextColor;
+            }
+            catch (Exception)
+            {
+                // Do nothing, just swallow it
+            }
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                thisButton.TouchDown -= ButtonTouchDown;
+                thisButton.TouchUpInside -= ButtonTouchDown;
+                thisButton.TouchUpOutside -= ButtonTouchDown;
+            }
+            base.Dispose(disposing);
         }
     }
 }

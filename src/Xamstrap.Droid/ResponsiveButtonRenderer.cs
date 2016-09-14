@@ -22,6 +22,11 @@ namespace Xamstrap.Droid
     public class ResponsiveButtonRenderer : ButtonRenderer
     {
         Android.Widget.Button thisButton;
+        private Color originalBackgroundColor;
+        private Color pressedBackgroundColor;
+        private Color pressedTextColor;
+        private Color originalTextColor;
+        private bool isToggleButton;
 
         protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.Button> e)
         {
@@ -41,7 +46,7 @@ namespace Xamstrap.Droid
                 ProcessButtonSize(classes);
             }
 
-
+            //Handle Button Pading
             var padding = (Thickness)Element.GetValue(ButtonProperty.PaddingProperty);
             if (padding.Left != -100 && padding.Top != -100 && padding.Right != -100 && padding.Bottom != -100)
             {
@@ -52,6 +57,65 @@ namespace Xamstrap.Droid
 
                 thisButton.SetPadding(left, top, right, bottom);
                 Element.HeightRequest = Element.FontSize + padding.VerticalThickness + 10;
+            }
+
+
+            // Handle PressedBackgroundColor
+            pressedBackgroundColor = (Xamarin.Forms.Color)Element.GetValue(ButtonProperty.PressedBackgroundColorProperty);
+            if (!pressedBackgroundColor.Equals(Color.Default))
+            {
+                originalBackgroundColor = Element.BackgroundColor;
+
+                //Handle TextColor
+                pressedTextColor = (Xamarin.Forms.Color)Element.GetValue(ButtonProperty.PressedTextColorProperty);
+                if (!pressedTextColor.Equals(Color.Default))
+                    originalTextColor = Element.TextColor;
+
+                thisButton.Touch += ButtonTouched;
+                thisButton.SetSingleLine(true);
+                isToggleButton = Convert.ToBoolean(Element.GetValue(ButtonProperty.IsToggleButtonProperty));
+            }          
+
+            // Handle Horizontal Content Alignment
+            var horizontalContentAlignment = (ButtonProperty.HorizontalContentAlignmentType)Element.GetValue(ButtonProperty.HorizontalContentAlignmentProperty);
+            if (horizontalContentAlignment != ButtonProperty.HorizontalContentAlignmentType.PlatformDefault)
+            {
+                switch (horizontalContentAlignment)
+                {
+                    case ButtonProperty.HorizontalContentAlignmentType.Fill:
+                        thisButton.Gravity = thisButton.Gravity | GravityFlags.FillHorizontal;
+                        break;
+                    case ButtonProperty.HorizontalContentAlignmentType.Left:
+                        thisButton.Gravity = thisButton.Gravity | GravityFlags.Left;
+                        break;
+                    case ButtonProperty.HorizontalContentAlignmentType.Right:
+                        thisButton.Gravity = thisButton.Gravity | GravityFlags.Right;
+                        break;
+                    case ButtonProperty.HorizontalContentAlignmentType.Centre:
+                        thisButton.Gravity = thisButton.Gravity | GravityFlags.CenterHorizontal;
+                        break;
+                }
+            }
+
+            // Handle Vertical Content Alignment
+            var verticalContentAlignment = (ButtonProperty.VerticalContentAlignmentType)Element.GetValue(ButtonProperty.VerticalContentAlignmentProperty);
+            if (verticalContentAlignment != ButtonProperty.VerticalContentAlignmentType.PlatformDefault)
+            {
+                switch (verticalContentAlignment)
+                {
+                    case ButtonProperty.VerticalContentAlignmentType.Fill:
+                        thisButton.Gravity = thisButton.Gravity | GravityFlags.FillVertical;
+                        break;
+                    case ButtonProperty.VerticalContentAlignmentType.Top:
+                        thisButton.Gravity = thisButton.Gravity | GravityFlags.Top;
+                        break;
+                    case ButtonProperty.VerticalContentAlignmentType.Bottom:
+                        thisButton.Gravity = thisButton.Gravity | GravityFlags.Bottom;
+                        break;
+                    case ButtonProperty.VerticalContentAlignmentType.Centre:
+                        thisButton.Gravity = thisButton.Gravity | GravityFlags.CenterVertical;
+                        break;
+                }
             }
 
         }
@@ -297,6 +361,30 @@ namespace Xamstrap.Droid
                 thisButton.SetPadding(21, 17, 21, 17);
                 Element.HeightRequest = Element.FontSize + 34 + 10;
             }
+        }
+
+        private void ButtonTouched(object sender, TouchEventArgs e)
+        {
+            if (e.Event.Action == MotionEventActions.Down)
+            {
+                Element.BackgroundColor = pressedBackgroundColor;
+                Element.TextColor = pressedTextColor;
+            }
+            else if (e.Event.Action == MotionEventActions.Up && !isToggleButton)
+            {
+                Element.BackgroundColor = originalBackgroundColor;
+                Element.TextColor = originalTextColor;
+            }
+            e.Handled = false;
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                thisButton.Touch -= ButtonTouched;
+            }
+            base.Dispose(disposing);
         }
     }
 }
