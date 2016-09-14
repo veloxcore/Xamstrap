@@ -584,6 +584,7 @@ namespace Xamstrap
         {
             IsMasterVisible = true;
             _overLay.IsVisible = false;
+            _buttonBack.IsVisible = false;
             _masterGrid.SetValue(AbsoluteLayout.LayoutFlagsProperty, AbsoluteLayoutFlags.All);
             _detailGrid.SetValue(AbsoluteLayout.LayoutFlagsProperty, AbsoluteLayoutFlags.All);
             _masterGrid.BackgroundColor = _masterGridHeader.BackgroundColor;

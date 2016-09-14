@@ -5,18 +5,18 @@
              xmlns:Attached="clr-namespace:Xamstrap.AttachedProperties;assembly=Xamstrap"
             x:Class="XamstrapSample.ButtonHelperSample" Title="Button Helper">
   <StackLayout Orientation="Vertical" BackgroundColor="White">
-    <Button Text="Button" Attached:ResponsiveProperty.Class="btn-default btn-xs"></Button>
-    <Button Text="Button" Attached:ResponsiveProperty.Class="btn-primary btn-sm"></Button>
-    <Button Text="Button" Attached:ResponsiveProperty.Class="btn-success btn-md"></Button>
-    <Button Text="Button" Attached:ResponsiveProperty.Class="btn-info btn-lg"></Button>
+    <Button Text="Button-XS" Attached:ResponsiveProperty.Class="btn-default btn-xs"></Button>
+    <Button Text="Button-SM" Attached:ResponsiveProperty.Class="btn-primary btn-sm"></Button>
+    <Button Text="Button-MD" Attached:ResponsiveProperty.Class="btn-success btn-md"></Button>
+    <Button Text="Button-LG" Attached:ResponsiveProperty.Class="btn-info btn-lg"></Button>
     <Button Text="Button" Attached:ResponsiveProperty.Class="btn-warning"></Button>
     <Button Text="Button" Attached:ResponsiveProperty.Class="btn-danger"></Button>
     <Button Text="Button" Attached:ResponsiveProperty.Class="btn-link"></Button>
     <Control:Div Attached:ResponsiveProperty.Class="btn-group">
-      <Button Text="Button" Attached:ResponsiveProperty.Class="btn-default btn-xs"></Button>
-      <Button Text="Button" Attached:ResponsiveProperty.Class="btn-primary btn-sm"></Button>
-      <Button Text="Button" Attached:ResponsiveProperty.Class="btn-success btn-md"></Button>
-      <Button Text="Button" Attached:ResponsiveProperty.Class="btn-info btn-lg"></Button>
+      <Button Text="Button-XS" Attached:ResponsiveProperty.Class="btn-default btn-xs"></Button>
+      <Button Text="Button-SM" Attached:ResponsiveProperty.Class="btn-primary btn-sm"></Button>
+      <Button Text="Button-MD" Attached:ResponsiveProperty.Class="btn-success btn-md"></Button>
+      <Button Text="Button-LG" Attached:ResponsiveProperty.Class="btn-info btn-lg"></Button>
       <Button Text="Button" Attached:ResponsiveProperty.Class="btn-warning"></Button>
       <Button Text="Button" Attached:ResponsiveProperty.Class="btn-danger"></Button>
       <Button Text="Button" Attached:ResponsiveProperty.Class="btn-link"></Button>

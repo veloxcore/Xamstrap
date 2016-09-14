@@ -22,18 +22,17 @@ namespace Xamstrap.iOS
         }
         protected override void OnElementChanged(ElementChangedEventArgs<Div> e)
         {
-            if(Control == null)
-            {
-                SetNativeControl(new UIView());
-            }
+            //if (Control == null)
+            //{
+            //    SetNativeControl(new UIView());
+            //}
 
             base.OnElementChanged(e);
             List<string> classes = Element?.GetValue(ResponsiveProperty.ClassProperty)?.ToString().Split(" ".ToCharArray()).ToList();
 
             if (classes != null)
             {
-                ProcessBackgroundColorElement(classes);
-
+                //ProcessBackgroundColorElement(classes);
                 ProcessVisibility(classes);
             }
         }
@@ -61,42 +60,42 @@ namespace Xamstrap.iOS
             }
         }
 
-        private void ProcessBackgroundColorElement(List<string> classes)
-        {
-            object backgroundColor = null;
-            if (classes.Any(o => o.Equals(Constant.BGPrimary)))
-            {
-                Application.Current.Resources?.TryGetValue(Constant.BGPrimary, out backgroundColor);
-                if (backgroundColor == null)
-                    backgroundColor = "#337ab7";
-            }
-            else if (classes.Any(o => o.Equals(Constant.BGSuccess)))
-            {
-                Application.Current.Resources?.TryGetValue(Constant.BGSuccess, out backgroundColor);
-                if (backgroundColor == null)
-                    backgroundColor = "#dff0d8";
-            }
-            else if (classes.Any(o => o.Equals(Constant.BGInfo)))
-            {
-                Application.Current.Resources?.TryGetValue(Constant.BGInfo, out backgroundColor);
-                if (backgroundColor == null)
-                    backgroundColor = "#d9edf7";
-            }
-            else if (classes.Any(o => o.Equals(Constant.BGWarning)))
-            {
-                Application.Current.Resources?.TryGetValue(Constant.BGWarning, out backgroundColor);
-                if (backgroundColor == null)
-                    backgroundColor = "#fcf8e3";
-            }
-            else if (classes.Any(o => o.Equals(Constant.BGDanger)))
-            {
-                Application.Current.Resources?.TryGetValue(Constant.BGDanger, out backgroundColor);
-                if (backgroundColor == null)
-                    backgroundColor = "#f2dede";
-            }
+        //private void ProcessBackgroundColorElement(List<string> classes)
+        //{
+        //    object backgroundColor = null;
+        //    if (classes.Any(o => o.Equals(Constant.BGPrimary)))
+        //    {
+        //        Application.Current.Resources?.TryGetValue(Constant.BGPrimary, out backgroundColor);
+        //        if (backgroundColor == null)
+        //            backgroundColor = "#337ab7";
+        //    }
+        //    else if (classes.Any(o => o.Equals(Constant.BGSuccess)))
+        //    {
+        //        Application.Current.Resources?.TryGetValue(Constant.BGSuccess, out backgroundColor);
+        //        if (backgroundColor == null)
+        //            backgroundColor = "#dff0d8";
+        //    }
+        //    else if (classes.Any(o => o.Equals(Constant.BGInfo)))
+        //    {
+        //        Application.Current.Resources?.TryGetValue(Constant.BGInfo, out backgroundColor);
+        //        if (backgroundColor == null)
+        //            backgroundColor = "#d9edf7";
+        //    }
+        //    else if (classes.Any(o => o.Equals(Constant.BGWarning)))
+        //    {
+        //        Application.Current.Resources?.TryGetValue(Constant.BGWarning, out backgroundColor);
+        //        if (backgroundColor == null)
+        //            backgroundColor = "#fcf8e3";
+        //    }
+        //    else if (classes.Any(o => o.Equals(Constant.BGDanger)))
+        //    {
+        //        Application.Current.Resources?.TryGetValue(Constant.BGDanger, out backgroundColor);
+        //        if (backgroundColor == null)
+        //            backgroundColor = "#f2dede";
+        //    }
 
-            if (backgroundColor != null)
-                Control.Layer.BackgroundColor = Color.FromHex(backgroundColor.ToString()).ToCGColor();
-        }
+        //    if (backgroundColor != null)
+        //        Control.Layer.BackgroundColor = Color.FromHex(backgroundColor.ToString()).ToCGColor();
+        //}
     }
 }
