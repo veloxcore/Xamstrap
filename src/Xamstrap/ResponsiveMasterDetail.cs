@@ -386,7 +386,7 @@ namespace Xamstrap
             _verticalLine.WidthRequest = 1;
             _verticalLine.HorizontalOptions = LayoutOptions.End;
             _verticalLine.VerticalOptions = LayoutOptions.FillAndExpand;
-            _verticalLine.BackgroundColor = Color.Black;
+            _verticalLine.BackgroundColor = Color.FromHex("#9DA5BE");
             _verticalLine.SetValue(Grid.ColumnProperty, 1);
             _verticalLine.SetValue(Grid.RowSpanProperty, 3);
             _masterGrid.Children.Add(_verticalLine);
@@ -551,6 +551,8 @@ namespace Xamstrap
                 _buttonBack.Text = Title;
             else
                 _buttonBack.Text = "Back";
+            _buttonBack.BorderWidth = 0;
+            _buttonBack.BorderColor = Color.Transparent;
             _buttonBack.IsVisible = false;
             _buttonBack.SetValue(AbsoluteLayout.LayoutBoundsProperty, new Rectangle(0, 0, 80, 40));
             _buttonBack.BackgroundColor = Color.Transparent;
@@ -573,7 +575,9 @@ namespace Xamstrap
 
             _buttonBack.Image = "menuPrimary.png";
             _buttonBack.IsVisible = true;
-            _buttonBack.SetValue(AbsoluteLayout.LayoutBoundsProperty, new Rectangle(0, 0, 40, 42));
+            _buttonBack.BorderWidth = 1;
+            _buttonBack.BorderColor = Color.FromHex("#D3D3D3");
+            _buttonBack.SetValue(AbsoluteLayout.LayoutBoundsProperty, new Rectangle(0, 0, 25, 42));
             _buttonBack.BackgroundColor = _masterGridHeader.BackgroundColor;
             _buttonBack.BorderRadius = 0;
             _buttonBack.VerticalOptions = LayoutOptions.Center;
@@ -607,7 +611,7 @@ namespace Xamstrap
 
         private BoxView GetHorizontalLine()
         {
-            return new BoxView() { HeightRequest = 1, BackgroundColor = Color.Black, HorizontalOptions = LayoutOptions.FillAndExpand };
+            return new BoxView() { HeightRequest = 1, BackgroundColor = Color.FromHex("#9DA5BE"), HorizontalOptions = LayoutOptions.FillAndExpand };
         }
         #endregion
     }
