@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+    <metadata>
+        <id>Xamstrap</id>
+        <version>0.2-pre02</version>
+        <title>Xamstrap</title>
+        <authors>Veloxcore Team</authors>
+        <owners>veloxcore</owners>
+        <licenseUrl>https://raw.githubusercontent.com/veloxcore/Xamstrap/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/veloxcore/Xamstrap</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Xamstrap for Xamarin.Forms is a toolkit to create a responsive layout for mobiles and tablets(Android/iOS).</description>
+        <copyright>Copyright © 2016  Veloxcore Team</copyright>
+        <language>en-US</language>
+        <tags>Xamarin Xamarin.Forms Xamarin.Android Xamarin.iOS bootstrap responsive</tags>
+        <dependencies>
+            <dependency id="Xamarin.Forms" version="2.3.1.114" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="lib\MonoAndroid10\Xamstrap.dll" target="lib\MonoAndroid10\Xamstrap.dll" />
+        <file src="lib\MonoAndroid10\Xamstrap.Droid.dll" target="lib\MonoAndroid10\Xamstrap.Droid.dll" />
+        <file src="lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamstrap.dll" target="lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamstrap.dll" />
+        <file src="lib\Xamarin.iOS10\Xamstrap.dll" target="lib\Xamarin.iOS10\Xamstrap.dll" />
+        <file src="lib\Xamarin.iOS10\Xamstrap.iOS.dll" target="lib\Xamarin.iOS10\Xamstrap.iOS.dll" />
+    </files>
+</package>
