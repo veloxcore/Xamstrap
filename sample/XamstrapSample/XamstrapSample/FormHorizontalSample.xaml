@@ -5,7 +5,7 @@
              xmlns:Control="clr-namespace:Xamstrap;assembly=Xamstrap"
              xmlns:Attached="clr-namespace:Xamstrap.AttachedProperties;assembly=Xamstrap" Title="Horizontal Form">
   <Control:Div Attached:ResponsiveProperty.Class="form-horizontal">
-    <Grid BackgroundColor="Yellow" Attached:ResponsiveProperty.Class="col-xs-3" HeightRequest="50"></Grid>
-    <Grid BackgroundColor="Green" Attached:ResponsiveProperty.Class="col-xs-9" HeightRequest="50"></Grid>
+    <Grid BackgroundColor="Yellow" Attached:ResponsiveProperty.Class="col-xs-3" HeightRequest="50" Margin="10"></Grid>
+    <Grid BackgroundColor="Green" Attached:ResponsiveProperty.Class="col-xs-9" HeightRequest="50" Margin="10"></Grid>
   </Control:Div>
 </ContentPage>

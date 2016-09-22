@@ -18,13 +18,13 @@ namespace Xamstrap.ClassProcessor
             foreach (var child in element.Children)
             {
                 var request = child.Measure(width, height);
-                var childWidth = width;
+                var childWidth = width - child.Margin.HorizontalThickness;
                 var childHeight = request.Request.Height;
 
-                var region = new Rectangle(x, yPos, childWidth, childHeight);
+                var region = new Rectangle(x + child.Margin.Left, yPos + child.Margin.Top, childWidth, childHeight);
                 child.Layout(region);
 
-                yPos += childHeight;
+                yPos += childHeight + child.Margin.VerticalThickness;
             }
         }
 
@@ -43,7 +43,7 @@ namespace Xamstrap.ClassProcessor
             foreach (var child in element.Children)
             {
                 var size = child.Measure(internalWidth, internalHeight);
-                height += size.Request.Height;
+                height += size.Request.Height + child.Margin.VerticalThickness;
             }
 
             height += element.Padding.VerticalThickness;

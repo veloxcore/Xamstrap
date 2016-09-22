@@ -42,13 +42,18 @@ namespace Xamstrap.ClassProcessor
 
                 double columnWidthRequest = columnsGrid / 12d;
 
+                //Calculate total height and width of current child considering all its child's height and width
                 var request = child.Measure(width, height);
 
                 double childWidth;
-                if (child.WidthRequest > 0)
-                    childWidth = request.Request.Width;
+                if (child.WidthRequest > -1)
+                {
+                    childWidth = child.WidthRequest;
+                }
                 else
-                    childWidth = width * columnWidthRequest;
+                {
+                    childWidth = width * columnWidthRequest - child.Margin.HorizontalThickness;
+                }               
 
                 double childHeight = request.Request.Height;
                 double childOffsetWidth;
@@ -59,26 +64,26 @@ namespace Xamstrap.ClassProcessor
                     totalChildRowWidth += childOffsetWidth;
                     xPos += childOffsetWidth;
                 }
-                totalChildRowWidth += childWidth;
+                totalChildRowWidth += childWidth + child.Margin.HorizontalThickness;
 
                 // Hack: as totalChildRowWidth and Width both coming as same number but minor difference in decimal places, hence comparing it with 0.1
                 if (totalChildRowWidth - width > 0.1)
                 {
                     yPos += lastChildHeight;
-                    lastChildHeight = childHeight;
+                    lastChildHeight = childHeight + child.Margin.VerticalThickness;
                     xPos = x;
-                    totalChildRowWidth = childWidth;
+                    totalChildRowWidth = childWidth + child.Margin.HorizontalThickness;
                 }
 
-                var region = new Rectangle(xPos, yPos, childWidth, childHeight);
+                var region = new Rectangle(xPos + child.Margin.Left, yPos + child.Margin.Top, childWidth, childHeight);
                 child.Layout(region);
 
                 if (totalChildRowWidth <= width)
-                    lastChildHeight = Math.Max(childHeight, lastChildHeight);
+                    lastChildHeight = Math.Max(childHeight + child.Margin.VerticalThickness, lastChildHeight);
                 else
-                    lastChildHeight = childHeight;
+                    lastChildHeight = childHeight + child.Margin.VerticalThickness;
 
-                xPos += region.Width;
+                xPos += region.Width + child.Margin.HorizontalThickness;
             }
         }
 
@@ -124,15 +129,16 @@ namespace Xamstrap.ClassProcessor
 
                 double columnWidthRequest = columnsGrid / 12d;
 
+                //Calculate total height and width of current child considering all its child's height and width
                 var request = child.Measure(width, internalHeight);
 
                 double childWidth;
-                if (child.WidthRequest > 0)
-                    childWidth = request.Request.Width;
+                if (child.WidthRequest > -1)
+                    childWidth = child.WidthRequest + child.Margin.HorizontalThickness;
                 else
-                    childWidth = width * columnWidthRequest;
+                    childWidth = width * columnWidthRequest - child.Margin.HorizontalThickness;
 
-                double childHeight = request.Request.Height;
+                double childHeight = request.Request.Height + child.Margin.VerticalThickness;
                 double childOffsetWidth;
 
                 if (columnsOffsetGrid > 0)

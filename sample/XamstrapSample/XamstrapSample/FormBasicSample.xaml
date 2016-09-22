@@ -2,19 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             x:Class="XamstrapSample.FormBasicSample"
-             xmlns:Control="clr-namespace:Xamstrap;assembly=Xamstrap" 
+             xmlns:Control="clr-namespace:Xamstrap;assembly=Xamstrap"
              xmlns:Attached="clr-namespace:Xamstrap.AttachedProperties;assembly=Xamstrap" Title="Basic Form">
   <StackLayout>
     <Control:Div Attached:ResponsiveProperty.Class="form-basic" >
-      <Grid HeightRequest="100" BackgroundColor="Red">
-        <Label Text="hi"></Label>
+      <Grid HeightRequest="100" BackgroundColor="Red" Margin="2,10,6,10">
+      </Grid>
+      <Grid HeightRequest="100" BackgroundColor="Blue" Margin="4,0,4,10">
+      </Grid>
+      <Grid HeightRequest="100" BackgroundColor="Yellow" Margin="6,0,2,10">
       </Grid>
     </Control:Div>
-    <Control:Div Attached:ResponsiveProperty.Class="form-basic">
-      <Grid HeightRequest="50" BackgroundColor="Yellow"></Grid>
-    </Control:Div>
-      <Control:Div Attached:ResponsiveProperty.Class="form-basic">
-      <Grid HeightRequest="150" BackgroundColor="Blue"></Grid>
-    </Control:Div>
+
   </StackLayout>
 </ContentPage>

@@ -563,7 +563,7 @@ namespace Xamstrap
 
         private void LayoutSmall()
         {
-            IsMasterVisible = false;
+            IsMasterVisible = true;
             _masterGrid.SetValue(AbsoluteLayout.LayoutFlagsProperty, AbsoluteLayoutFlags.HeightProportional);
             _masterGrid.BackgroundColor = _masterGridHeader.BackgroundColor;
             _masterGrid.WidthRequest = MasterWidth;

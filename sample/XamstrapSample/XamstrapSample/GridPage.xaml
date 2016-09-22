@@ -6,9 +6,9 @@
             x:Class="XamstrapSample.GridPage" Title="Responsive Grid">
   <StackLayout Orientation="Vertical">
     <Control:Div Attached:ResponsiveProperty.Class="row">
-      <Grid Attached:ResponsiveProperty.Class="col-md-2 col-sm-5" HeightRequest="50" BackgroundColor="Navy"></Grid>
-      <Grid Attached:ResponsiveProperty.Class="col-md-8 col-md-offset-2 col-sm-7" HeightRequest="60" BackgroundColor="Red"></Grid>
-      <Grid Attached:ResponsiveProperty.Class="col-md-8 col-sm-6" WidthRequest="80" HeightRequest="70" BackgroundColor="Silver"></Grid>
+      <Grid Margin="10" Attached:ResponsiveProperty.Class="col-md-2 col-sm-5" HeightRequest="50" BackgroundColor="Navy"></Grid>
+      <Grid Margin="10"  Attached:ResponsiveProperty.Class="col-md-8 col-md-offset-2 col-sm-7" HeightRequest="60" BackgroundColor="Red"></Grid>
+      <Grid Margin="10"  Attached:ResponsiveProperty.Class="col-md-8 col-sm-6" WidthRequest="80" HeightRequest="70" BackgroundColor="Silver"></Grid>
       <Grid Attached:ResponsiveProperty.Class="col-md-6 col-sm-6" HeightRequest="50" BackgroundColor="Blue"></Grid>
       <Grid Attached:ResponsiveProperty.Class="col-md-11 col-sm-11" HeightRequest="50" BackgroundColor="Green"></Grid>
       <Grid Attached:ResponsiveProperty.Class="col-md-5 col-sm-12" HeightRequest="40" BackgroundColor="Yellow"></Grid>
