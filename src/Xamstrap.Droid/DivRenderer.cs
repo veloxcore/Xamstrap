@@ -27,7 +27,7 @@ namespace Xamstrap.Droid
 
             if (classes != null)
             {
-                ProcessBackgroundColorElement(classes);
+                //ProcessBackgroundColorElement(classes);
 
                 ProcessVisibility(classes);
             }
