@@ -58,7 +58,7 @@ namespace Xamstrap.ClassProcessor
                 double childHeight = request.Request.Height;
                 double childOffsetWidth;
 
-                if (columnsOffsetGrid > 0)
+                if (columnsOffsetGrid > -1)
                 {
                     childOffsetWidth = (columnsOffsetGrid / 12d) * width;
                     totalChildRowWidth += childOffsetWidth;

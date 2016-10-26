@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamstrapSample.VisiblitySample"
+             xmlns:Control="clr-namespace:Xamstrap;assembly=Xamstrap"
+             xmlns:Attached="clr-namespace:Xamstrap.AttachedProperties;assembly=Xamstrap" Title="Visibility">
+  <ScrollView>
+    <StackLayout Orientation="Vertical">
+      <!--Visiblity Sample-->
+      <Label Text="Visiblity" TextColor="Black" FontSize="30" Margin="10,10,0,0"></Label>
+      <Label Text="Use these utility classes for showing and hiding content by device size." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
+
+      <Grid BackgroundColor="#ddd">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="100"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <!--X-->
+        <Control:Div Attached:ResponsiveProperty.Class="hidden-xs hidden-sm" Grid.Row="0" Grid.Column="1"  HorizontalOptions="Center" VerticalOptions="Center" >
+          <Label Text="Extra Small" FontSize="17" FontAttributes="Bold"></Label>
+        </Control:Div>
+        <Control:Div Attached:ResponsiveProperty.Class="hidden-xs hidden-sm" Grid.Row="0" Grid.Column="2"  HorizontalOptions="Center" VerticalOptions="Center" >
+          <Label Text="Small" FontSize="17" FontAttributes="Bold"></Label>
+        </Control:Div>
+        <Control:Div Attached:ResponsiveProperty.Class="hidden-xs hidden-sm" Grid.Row="0" Grid.Column="3"  HorizontalOptions="Center" VerticalOptions="Center" >
+          <Label Text="Medium" FontSize="17" FontAttributes="Bold"></Label>
+        </Control:Div>
+        <Control:Div Attached:ResponsiveProperty.Class="hidden-xs hidden-sm" Grid.Row="0" Grid.Column="4"  HorizontalOptions="Center" VerticalOptions="Center" >
+          <Label Text="Large" FontSize="17" FontAttributes="Bold"></Label>
+        </Control:Div>
+        <Control:Div Attached:ResponsiveProperty.Class="hidden-xs hidden-sm" Grid.Row="0" Grid.Column="5"  HorizontalOptions="Center" VerticalOptions="Center" >
+          <Label Text="Extra Large" FontSize="17" FontAttributes="Bold"></Label>
+        </Control:Div>
+
+        <Control:Div Attached:ResponsiveProperty.Class="hidden-md hidden-lg hidden-xl" Grid.Row="0" Grid.Column="1"  HorizontalOptions="Center" VerticalOptions="Center" >
+          <Label Text="xs" FontSize="17" FontAttributes="Bold"></Label>
+        </Control:Div>
+        <Control:Div Attached:ResponsiveProperty.Class="hidden-md hidden-lg hidden-xl" Grid.Row="0" Grid.Column="2"  HorizontalOptions="Center" VerticalOptions="Center" >
+          <Label Text="sm" FontSize="17" FontAttributes="Bold"></Label>
+        </Control:Div>
+        <Control:Div Attached:ResponsiveProperty.Class="hidden-md hidden-lg hidden-xl" Grid.Row="0" Grid.Column="3"  HorizontalOptions="Center" VerticalOptions="Center" >
+          <Label Text="md" FontSize="17" FontAttributes="Bold"></Label>
+        </Control:Div>
+        <Control:Div Attached:ResponsiveProperty.Class="hidden-md hidden-lg hidden-xl" Grid.Row="0" Grid.Column="4"  HorizontalOptions="Center" VerticalOptions="Center" >
+          <Label Text="lg" FontSize="17" FontAttributes="Bold"></Label>
+        </Control:Div>
+        <Control:Div Attached:ResponsiveProperty.Class="hidden-md hidden-lg hidden-xl" Grid.Row="0" Grid.Column="5"  HorizontalOptions="Center" VerticalOptions="Center" >
+          <Label Text="xl" FontSize="17" FontAttributes="Bold"></Label>
+        </Control:Div>
+
+        <!--Y-->
+        <Label Text="hidden-xs" Grid.Row="1" Grid.Column="0"  HorizontalOptions="Center" VerticalOptions="Center" FontSize="17" FontAttributes="Bold"></Label>
+        <Label Text="hidden-sm" Grid.Row="2" Grid.Column="0"  HorizontalOptions="Center" VerticalOptions="Center" FontSize="17" FontAttributes="Bold"></Label>
+        <Label Text="hidden-md" Grid.Row="3" Grid.Column="0"  HorizontalOptions="Center" VerticalOptions="Center" FontSize="17" FontAttributes="Bold"></Label>
+        <Label Text="hidden-lg" Grid.Row="4" Grid.Column="0"  HorizontalOptions="Center" VerticalOptions="Center" FontSize="17" FontAttributes="Bold"></Label>
+        <Label Text="hidden-xl" Grid.Row="5" Grid.Column="0"  HorizontalOptions="Center" VerticalOptions="Center" FontSize="17" FontAttributes="Bold"></Label>
+
+        <!--hidden-xs-->
+        <Image Source="Invisible.png" Grid.Row="1" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center"/>
+        <Image Source="Visible.png"   Grid.Row="1" Grid.Column="2" HorizontalOptions="Start" VerticalOptions="Center"/>
+        <Image Source="Visible.png"   Grid.Row="1" Grid.Column="3" HorizontalOptions="Start" VerticalOptions="Center"/>
+        <Image Source="Visible.png"   Grid.Row="1" Grid.Column="4" HorizontalOptions="Start" VerticalOptions="Center"/>
+        <Image Source="Visible.png"   Grid.Row="1" Grid.Column="5" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+        <!--hidden-sm-->
+        <Image Source="Visible.png"   Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center"/>
+        <Image Source="Invisible.png" Grid.Row="2" Grid.Column="2" HorizontalOptions="Start" VerticalOptions="Center"/>
+        <Image Source="Visible.png"   Grid.Row="2" Grid.Column="3" HorizontalOptions="Start" VerticalOptions="Center"/>
+        <Image Source="Visible.png"   Grid.Row="2" Grid.Column="4" HorizontalOptions="Start" VerticalOptions="Center"/>
+        <Image Source="Visible.png"   Grid.Row="2" Grid.Column="5" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+        <!--hidden-md-->
+        <Image Source="Visible.png"   Grid.Row="3" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center"/>
+        <Image Source="Visible.png"   Grid.Row="3" Grid.Column="2" HorizontalOptions="Start" VerticalOptions="Center"/>
+        <Image Source="Invisible.png" Grid.Row="3" Grid.Column="3" HorizontalOptions="Start" VerticalOptions="Center"/>
+        <Image Source="Visible.png"   Grid.Row="3" Grid.Column="4" HorizontalOptions="Start" VerticalOptions="Center"/>
+        <Image Source="Visible.png"   Grid.Row="3" Grid.Column="5" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+        <!--hidden-lg-->
+        <Image Source="Visible.png"   Grid.Row="4" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center"/>
+        <Image Source="Visible.png"   Grid.Row="4" Grid.Column="2" HorizontalOptions="Start" VerticalOptions="Center"/>
+        <Image Source="Visible.png"   Grid.Row="4" Grid.Column="3" HorizontalOptions="Start" VerticalOptions="Center"/>
+        <Image Source="Invisible.png" Grid.Row="4" Grid.Column="4" HorizontalOptions="Start" VerticalOptions="Center"/>
+        <Image Source="Visible.png"   Grid.Row="4" Grid.Column="5" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+        <!--hidden-xl-->
+        <Image Source="Visible.png"   Grid.Row="5" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center"/>
+        <Image Source="Visible.png"   Grid.Row="5" Grid.Column="2" HorizontalOptions="Start" VerticalOptions="Center"/>
+        <Image Source="Visible.png"   Grid.Row="5" Grid.Column="3" HorizontalOptions="Start" VerticalOptions="Center"/>
+        <Image Source="Visible.png"   Grid.Row="5" Grid.Column="4" HorizontalOptions="Start" VerticalOptions="Center"/>
+        <Image Source="Invisible.png" Grid.Row="5" Grid.Column="5" HorizontalOptions="Start" VerticalOptions="Center"/>
+      </Grid>
+     
+      <!--Note-->
+      <Control:Div Attached:ResponsiveProperty.Class="row hidden-md hidden-lg hidden-xl">
+        <Label Margin="10,0,0,0" TextColor="Black" Text="NOTE: xs=Extra Small, sm=Small, md=Medium, lg=Large, xl=Extra Large"></Label>
+      </Control:Div>
+
+      <!--Visiblity Sample-->
+      <Label Text="Example: Visiblity" TextColor="Black" FontSize="30" Margin="10,20,0,0"></Label>
+      <Label Text="In the below example there are total five labels.There visiblity is controlled according to the device size.For your current device size respective label will be hidden." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
+
+      <!--hidden-xs-->
+      <Control:Div Attached:ResponsiveProperty.Class="row" Margin="10,0,0,0">
+        <Control:Div Attached:ResponsiveProperty.Class="hidden-xs col-xs-1">
+          <Image Source="Visible.png"/>
+        </Control:Div>
+        <Control:Div Attached:ResponsiveProperty.Class="hidden-sm hidden-md hidden-lg hidden-xl col-xs-1">
+          <Image Source="Invisible.png"/>
+        </Control:Div>
+        <Control:Div Attached:ResponsiveProperty.Class="col-xs-11">
+          <Label Text="This will be hidden in Extra Small." TextColor="Black"></Label>
+        </Control:Div>
+      </Control:Div>
+
+      <!--hidden-sm-->
+      <Control:Div Attached:ResponsiveProperty.Class="row" Margin="10,0,0,0">
+        <Control:Div Attached:ResponsiveProperty.Class="hidden-sm col-xs-1">
+          <Image Source="Visible.png"/>
+        </Control:Div>
+        <Control:Div Attached:ResponsiveProperty.Class="hidden-xs hidden-md hidden-lg hidden-xl col-xs-1">
+          <Image Source="Invisible.png"/>
+        </Control:Div>
+        <Control:Div Attached:ResponsiveProperty.Class="col-xs-11">
+          <Label Text="This will be hidden in Small." TextColor="Black"></Label>
+        </Control:Div>
+      </Control:Div>
+
+      <!--hidden-md-->
+      <Control:Div Attached:ResponsiveProperty.Class="row" Margin="10,0,0,0">
+        <Control:Div Attached:ResponsiveProperty.Class="hidden-md col-xs-1">
+          <Image Source="Visible.png"/>
+        </Control:Div>
+        <Control:Div Attached:ResponsiveProperty.Class="hidden-xs hidden-sm hidden-lg hidden-xl col-xs-1">
+          <Image Source="Invisible.png"/>
+        </Control:Div>
+        <Control:Div Attached:ResponsiveProperty.Class="col-xs-11">
+          <Label Text="This will be hidden in Medium." TextColor="Black"></Label>
+        </Control:Div>
+      </Control:Div>
+
+      <!--hidden-lg-->
+      <Control:Div Attached:ResponsiveProperty.Class="row" Margin="10,0,0,0">
+        <Control:Div Attached:ResponsiveProperty.Class="hidden-lg col-xs-1">
+          <Image Source="Visible.png"/>
+        </Control:Div>
+        <Control:Div Attached:ResponsiveProperty.Class="hidden-xs hidden-sm hidden-md hidden-xl col-xs-1">
+          <Image Source="Invisible.png"/>
+        </Control:Div>
+        <Control:Div Attached:ResponsiveProperty.Class="col-xs-11">
+          <Label Text="This will be hidden in Large." TextColor="Black"></Label>
+        </Control:Div>
+      </Control:Div>
+
+      <!--hidden-xl-->
+      <Control:Div Attached:ResponsiveProperty.Class="row" Margin="10,0,0,10">
+        <Control:Div Attached:ResponsiveProperty.Class="hidden-xl col-xs-1">
+          <Image Source="Visible.png"/>
+        </Control:Div>
+        <Control:Div Attached:ResponsiveProperty.Class="hidden-xs hidden-sm hidden-md hidden-lg col-xs-1">
+          <Image Source="Invisible.png"/>
+        </Control:Div>
+        <Control:Div Attached:ResponsiveProperty.Class="col-xs-11">
+          <Label Text="This will be hidden in Extra Large." TextColor="Black"></Label>
+        </Control:Div>
+      </Control:Div>
+
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamstrapSample.ListOfSamples" Title="Samples"
+             xmlns:Control="clr-namespace:Xamstrap;assembly=Xamstrap"
+             xmlns:Attached="clr-namespace:Xamstrap.AttachedProperties;assembly=Xamstrap">
+  <ScrollView>
+    <StackLayout>
+      <Control:Div Attached:ResponsiveProperty.Class="row" Margin="0,10,0,0">
+        <StackLayout  Attached:ResponsiveProperty.Class="col-xs-12">
+          <Label HorizontalOptions="Center" Text="Grid System" FontSize="30" TextColor="Black"></Label>
+          <Label HorizontalOptions="Center" Margin="30,0,30,0" FontSize="15" Text="Xamstrap includes a responsive, fluid grid system that appropriately scales up to 12 columns as the device size increases. It includes predefined classes for easy layout options."></Label>
+          <Button Text="View Samples >>" HorizontalOptions="Center" WidthRequest="250" Attached:ResponsiveProperty.Class="btn-primary btn-sm" x:Name="sampleGrid"></Button>
+        </StackLayout>
+      </Control:Div>
+
+      <Control:Div Attached:ResponsiveProperty.Class="row">
+        <StackLayout  Attached:ResponsiveProperty.Class="col-xs-12">
+          <Label HorizontalOptions="Center" Text="Buttons" FontSize="30" TextColor="Black"></Label>
+          <Label HorizontalOptions="Center" Margin="30,0,30,0" FontSize="15" Text="Xamstrap includes a large numbers of classes to create different types of buttons.Use any of the available button classes to quickly create a styled button.NOTE: Button width must be specified by the user."></Label>
+          <Button Text="View Samples >>" HorizontalOptions="Center" WidthRequest="250" Attached:ResponsiveProperty.Class="btn-primary btn-sm" x:Name="sampleButton"></Button>
+        </StackLayout>
+      </Control:Div>
+
+      <Control:Div Attached:ResponsiveProperty.Class="row">
+        <StackLayout  Attached:ResponsiveProperty.Class="col-xs-12">
+          <Label HorizontalOptions="Center" Text="Text" FontSize="30" TextColor="Black"></Label>
+          <Label HorizontalOptions="Center" Margin="30,0,30,0" FontSize="15" Text="Xamstrap includes different classes inorder to apply style to text"></Label>
+          <Button Text="View Samples >>" HorizontalOptions="Center" WidthRequest="250" Attached:ResponsiveProperty.Class="btn-primary btn-sm" x:Name="sampleText"></Button>
+        </StackLayout>
+      </Control:Div>
+
+      <Control:Div Attached:ResponsiveProperty.Class="row">
+        <StackLayout  Attached:ResponsiveProperty.Class="col-xs-12">
+          <Label HorizontalOptions="Center" Text="Forms" FontSize="30" TextColor="Black"></Label>
+          <Label HorizontalOptions="Center" Margin="30,0,30,0" FontSize="15" Text="Xamstrap includes wide range of form classes that can help you to arrange label, entry and button in order to create forms"></Label>
+          <Button Text="View Samples >>" HorizontalOptions="Center" WidthRequest="250" Attached:ResponsiveProperty.Class="btn-primary btn-sm" x:Name="sampleForm"></Button>
+        </StackLayout>
+      </Control:Div>
+
+      <Control:Div Attached:ResponsiveProperty.Class="row">
+        <StackLayout  Attached:ResponsiveProperty.Class="col-xs-12">
+          <Label HorizontalOptions="Center" Text="Tab" FontSize="30" TextColor="Black"></Label>
+          <Label HorizontalOptions="Center" Margin="30,0,30,0" FontSize="15" Text="Xamstrap include an easy to use tab system.By adding Tab Items to Tab it will create a Tab stracture.Also the default tab will be specified using IsSelected property.View the sample to know more."></Label>
+          <Button Text="View Samples >>" HorizontalOptions="Center" WidthRequest="250" Attached:ResponsiveProperty.Class="btn-primary btn-sm" x:Name="sampleTab"></Button>
+        </StackLayout>
+      </Control:Div>
+
+      <Control:Div Attached:ResponsiveProperty.Class="row">
+        <StackLayout  Attached:ResponsiveProperty.Class="col-xs-12">
+          <Label HorizontalOptions="Center" Text="Visiblity" FontSize="30" TextColor="Black"></Label>
+          <Label HorizontalOptions="Center" Margin="30,0,30,0" FontSize="15" Text="Xamstrap include wide rage of classes that can help to show and hide elements based on screen size."></Label>
+          <Button Text="View Details >>" HorizontalOptions="Center" WidthRequest="250" Attached:ResponsiveProperty.Class="btn-primary btn-sm" x:Name="sampleVisiblity"></Button>
+        </StackLayout>
+      </Control:Div>
+      
+      <Control:Div Attached:ResponsiveProperty.Class="row" Margin="0,0,0,10">
+        <StackLayout  Attached:ResponsiveProperty.Class="col-xs-12">
+          <Label HorizontalOptions="Center" Text="Master Detail" FontSize="30" TextColor="Black"></Label>
+          <Label HorizontalOptions="Center" Margin="30,0,30,0" FontSize="15" Text="Xamstrap include an easy to use master detail.Please explore sample to know more."></Label>
+          <Button Text="View Samples >>" HorizontalOptions="Center" WidthRequest="250" Attached:ResponsiveProperty.Class="btn-primary btn-sm" x:Name="sampleMasterDetail"></Button>
+        </StackLayout>
+      </Control:Div>
+      
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

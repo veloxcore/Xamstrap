@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamstrapSample.GridSample"
+             xmlns:Control="clr-namespace:Xamstrap;assembly=Xamstrap"
+             xmlns:Attached="clr-namespace:Xamstrap.AttachedProperties;assembly=Xamstrap" Title="Grid System">
+  <ScrollView>
+    <StackLayout>
+      <!--Stacked-to-horizontal-->
+      <Label Text="Example: Stacked-to-horizontal" TextColor="Black" FontSize="30" Margin="10,10,0,0"></Label>
+      <Label Text="Using a single set of col-md-* grid classes, you can create a basic grid system that starts out stacked on extra small to small screens before becoming horizontal on medium screens. Place grid columns in any row." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
+
+      <!-- Sample col-md-(1)-->
+      <Control:Div Attached:ResponsiveProperty.Class="row">
+        <Grid Attached:ResponsiveProperty.Class="col-md-1" HeightRequest="50" BackgroundColor="#E0E0E0">
+          <Label HorizontalOptions="Center" VerticalOptions="Center" Text="col-md-1"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-md-1" HeightRequest="50" BackgroundColor="#757575">
+          <Label HorizontalOptions="Center" VerticalOptions="Center" Text="col-md-1" TextColor="White"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-md-1" HeightRequest="50" BackgroundColor="#E0E0E0">
+          <Label HorizontalOptions="Center" VerticalOptions="Center" Text="col-md-1"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-md-1" HeightRequest="50" BackgroundColor="#757575">
+          <Label HorizontalOptions="Center" VerticalOptions="Center" Text="col-md-1" TextColor="White"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-md-1" HeightRequest="50" BackgroundColor="#E0E0E0">
+          <Label HorizontalOptions="Center" VerticalOptions="Center" Text="col-md-1"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-md-1" HeightRequest="50" BackgroundColor="#757575">
+          <Label HorizontalOptions="Center" VerticalOptions="Center" Text="col-md-1" TextColor="White"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-md-1" HeightRequest="50" BackgroundColor="#E0E0E0">
+          <Label HorizontalOptions="Center" VerticalOptions="Center" Text="col-md-1"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-md-1" HeightRequest="50" BackgroundColor="#757575">
+          <Label HorizontalOptions="Center" VerticalOptions="Center" Text="col-md-1" TextColor="White"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-md-1" HeightRequest="50" BackgroundColor="#E0E0E0">
+          <Label HorizontalOptions="Center" VerticalOptions="Center" Text="col-md-1"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-md-1" HeightRequest="50" BackgroundColor="#757575">
+          <Label HorizontalOptions="Center" VerticalOptions="Center" Text="col-md-1" TextColor="White"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-md-1" HeightRequest="50" BackgroundColor="#E0E0E0">
+          <Label HorizontalOptions="Center" VerticalOptions="Center" Text="col-md-1"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-md-1" HeightRequest="50" BackgroundColor="#757575">
+          <Label HorizontalOptions="Center" VerticalOptions="Center" Text="col-md-1" TextColor="White"></Label>
+        </Grid>
+      </Control:Div>
+
+      <!-- Sample col-md-(8/4)-->
+      <Control:Div Attached:ResponsiveProperty.Class="row">
+        <Grid Attached:ResponsiveProperty.Class="col-md-8" HeightRequest="50" BackgroundColor="#E0E0E0">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" Text="col-md-8"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-md-4" HeightRequest="50" BackgroundColor="#757575">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" Text="col-md-4"></Label>
+        </Grid>
+      </Control:Div>
+
+      <!-- Sample col-md-(4/4/4)-->
+      <Control:Div Attached:ResponsiveProperty.Class="row">
+        <Grid Attached:ResponsiveProperty.Class="col-md-4" HeightRequest="50" BackgroundColor="#E0E0E0">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" Text="col-md-4"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-md-4" HeightRequest="50" BackgroundColor="#757575">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" Text="col-md-4"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-md-4" HeightRequest="50" BackgroundColor="#E0E0E0">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" Text="col-md-4"></Label>
+        </Grid>
+      </Control:Div>
+
+      <!-- Sample col-md-(6/6)-->
+      <Control:Div Attached:ResponsiveProperty.Class="row">
+        <Grid Attached:ResponsiveProperty.Class="col-md-6" HeightRequest="50" BackgroundColor="#E0E0E0">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" Text="col-md-6"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-md-6" HeightRequest="50" BackgroundColor="#757575">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" Text="col-md-6"></Label>
+        </Grid>
+      </Control:Div>
+
+      <!--Extra Small and Medium Screens-->
+      <Label Text="Example: Extra Small and Medium Screens" TextColor="Black" FontSize="30" Margin="10,20,0,0"></Label>
+      <Label Text="Don't want your columns to simply stack in extra small and small screens? Use the extra small and medium device grid classes by adding col-xs-* col-md-* to your columns. See the example below for a better idea of how it all works." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
+
+      <!-- Sample col-md-(8/4)/col-xs-(12/6)-->
+      <Control:Div Attached:ResponsiveProperty.Class="row">
+        <Grid Attached:ResponsiveProperty.Class="col-xs-12 col-md-8" HeightRequest="50" BackgroundColor="#E0E0E0">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" Text="col-xs-12  col-md-8"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-xs-6 col-md-4" HeightRequest="50" BackgroundColor="#757575">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" Text="col-xs-6  col-md-4"></Label>
+        </Grid>
+      </Control:Div>
+
+      <!-- Sample col-md-(4/4/4)/col-xs-(6/6/6)-->
+      <Control:Div Attached:ResponsiveProperty.Class="row">
+        <Grid Attached:ResponsiveProperty.Class="col-xs-6 col-md-4" HeightRequest="50" BackgroundColor="#E0E0E0">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" Text="col-xs-6  col-md-4"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-xs-6 col-md-4" HeightRequest="50" BackgroundColor="#757575">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" Text="col-xs-6  col-md-4"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-xs-6 col-md-4" HeightRequest="50" BackgroundColor="#E0E0E0">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" Text="col-xs-6  col-md-4"></Label>
+        </Grid>
+      </Control:Div>
+
+      <!-- Sample col-xs-(6/6)-->
+      <Control:Div Attached:ResponsiveProperty.Class="row">
+        <Grid Attached:ResponsiveProperty.Class="col-xs-6" HeightRequest="50" BackgroundColor="#E0E0E0">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" Text="col-xs-6"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-xs-6" HeightRequest="50" BackgroundColor="#757575">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" Text="col-xs-6"></Label>
+        </Grid>
+      </Control:Div>
+
+      <!--Extra Small, Small and Medium Screens-->
+      <Label Text="Example: Extra Small, Small and Medium Screens" TextColor="Black" FontSize="30" Margin="10,20,0,0"></Label>
+      <Label Text="Build on the previous example by creating even more dynamic and powerful layouts with tablet .col-sm-* classes." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
+
+      <!-- Sample col-md-(8/4)/col-sm-(6)/col-xs-(12/6)-->
+      <Control:Div Attached:ResponsiveProperty.Class="row">
+        <Grid Attached:ResponsiveProperty.Class="col-xs-12 col-sm-6 col-md-8" HeightRequest="50" BackgroundColor="#E0E0E0">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" Text="col-xs-12  col-sm-6  col-md-8"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-xs-6 col-md-4" HeightRequest="50" BackgroundColor="#757575">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" Text="col-xs-6  col-md-4"></Label>
+        </Grid>
+      </Control:Div>
+
+      <!-- Sample col-sm-(6/6/6)/col-xs-(4/4/4)-->
+      <Control:Div Attached:ResponsiveProperty.Class="row">
+        <Grid Attached:ResponsiveProperty.Class="col-xs-6 col-sm-4" HeightRequest="50" BackgroundColor="#E0E0E0">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" Text="col-xs-6  col-sm-4"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-xs-6 col-sm-4" HeightRequest="50" BackgroundColor="#757575">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" Text="col-xs-6  col-sm-4"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-xs-6 col-sm-4" HeightRequest="50" BackgroundColor="#E0E0E0">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" Text="col-xs-6  col-sm-4"></Label>
+        </Grid>
+      </Control:Div>
+
+      <!--Column wrapping-->
+      <Label Text="Example: Column wrapping" TextColor="Black" FontSize="30" Margin="10,20,0,0"></Label>
+      <Label Text="If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
+
+      <!-- Sample col-sm-(6/6/6)/col-xs-(9/4/6)-->
+      <Control:Div Attached:ResponsiveProperty.Class="row">
+        <Grid Attached:ResponsiveProperty.Class="col-xs-9" HeightRequest="50" BackgroundColor="#E0E0E0">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" Text="col-xs-9"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-xs-4" HeightRequest="50" BackgroundColor="#757575">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" Text="col-xs-4  Since 9 + 4 = 13 > 12,wrap to new line"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-xs-6" HeightRequest="50" BackgroundColor="#E0E0E0">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" Text="col-xs-6"></Label>
+        </Grid>
+      </Control:Div>
+
+      <!--Offsetting columns-->
+      <Label Text="Offsetting columns" TextColor="Black" FontSize="30" Margin="10,20,0,0"></Label>
+      <Label Text="Move columns to the right using .col-md-offset-* classes. These classes increase the left margin of a column by * columns. For example, .col-md-offset-4 moves .col-md-4 over four columns." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
+
+      <!-- Sample col-md-(4/4)/col-md-offset-(4)-->
+      <Control:Div Attached:ResponsiveProperty.Class="row">
+        <Grid Attached:ResponsiveProperty.Class="col-md-4" HeightRequest="50" BackgroundColor="#E0E0E0">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" Text="col-md-4"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-md-4 col-md-offset-4" HeightRequest="50" BackgroundColor="#757575">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" Text="col-md-4  col-md-offset-4"></Label>
+        </Grid>
+      </Control:Div>
+
+      <!-- Sample col-md-(3/3)/col-md-offset-(3/3)-->
+      <Control:Div Attached:ResponsiveProperty.Class="row">
+        <Grid Attached:ResponsiveProperty.Class="col-md-3 col-md-offset-3" HeightRequest="50" BackgroundColor="#E0E0E0">
+          <Label HorizontalOptions="Center" VerticalOptions="Center" Text="col-md-3 col-md-offset-3"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-md-3 col-md-offset-3" HeightRequest="50" BackgroundColor="#757575">
+          <Label HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" Text="col-md-3 col-md-offset-3"></Label>
+        </Grid>
+      </Control:Div>
+
+      <!-- Sample col-md-(6)/col-md-offset-(3)-->
+      <Control:Div Attached:ResponsiveProperty.Class="row" Margin="0,0,0,10">
+        <Grid Attached:ResponsiveProperty.Class="col-md-6 col-md-offset-3" HeightRequest="50" BackgroundColor="#E0E0E0">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" Text="col-md-6 col-md-offset-3"></Label>
+        </Grid>
+      </Control:Div>
+      
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

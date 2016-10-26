@@ -49,13 +49,16 @@ namespace Xamstrap.ClassProcessor
 
             // Measure children height
             double height = 0d;
+            double lastChildHeight = 0d;
             foreach (var child in element.Children)
             {
                 var size = child.Measure(internalWidth, internalHeight);
-                height += size.Request.Height + child.Margin.VerticalThickness;
+
+                lastChildHeight = Math.Max(size.Request.Height + child.Margin.VerticalThickness, lastChildHeight);
+
             }
 
-            height += element.Padding.VerticalThickness;
+            height += element.Padding.VerticalThickness + lastChildHeight;
 
             return new SizeRequest(new Size(internalWidth, height), new Size(0, 0));
         }

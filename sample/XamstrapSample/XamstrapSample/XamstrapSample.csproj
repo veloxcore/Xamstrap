@@ -38,45 +38,34 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BackgroundHelperSample.xaml.cs">
-      <DependentUpon>BackgroundHelperSample.xaml</DependentUpon>
+    <Compile Include="ButtonSample.xaml.cs">
+      <DependentUpon>ButtonSample.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ButtonGroupSample.xaml.cs">
-      <DependentUpon>ButtonGroupSample.xaml</DependentUpon>
+    <Compile Include="FormsSample.xaml.cs">
+      <DependentUpon>FormsSample.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ButtonHelperSample.xaml.cs">
-      <DependentUpon>ButtonHelperSample.xaml</DependentUpon>
+    <Compile Include="GridSample.xaml.cs">
+      <DependentUpon>GridSample.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FormBasicSample.xaml.cs">
-      <DependentUpon>FormBasicSample.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="FormHorizontalSample.xaml.cs">
-      <DependentUpon>FormHorizontalSample.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="FormInlineSample.xaml.cs">
-      <DependentUpon>FormInlineSample.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GridPage.xaml.cs">
-      <DependentUpon>GridPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="HomePage.xaml.cs">
-      <DependentUpon>HomePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="InputGroupSample.xaml.cs">
-      <DependentUpon>InputGroupSample.xaml</DependentUpon>
+    <Compile Include="ListOfSamples.xaml.cs">
+      <DependentUpon>ListOfSamples.xaml</DependentUpon>
     </Compile>
     <Compile Include="MasterDetailSample.xaml.cs">
       <DependentUpon>MasterDetailSample.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResponsiveUtils.xaml.cs">
-      <DependentUpon>ResponsiveUtils.xaml</DependentUpon>
+    <Compile Include="MasterDetailData.cs" />
+    <Compile Include="TabSample.xaml.cs">
+      <DependentUpon>TabSample.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TabPageSample.xaml.cs">
-      <DependentUpon>TabPageSample.xaml</DependentUpon>
+    <Compile Include="TextSample.xaml.cs">
+      <DependentUpon>TextSample.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TextHelperSample.xaml.cs">
-      <DependentUpon>TextHelperSample.xaml</DependentUpon>
+    <Compile Include="VisiblitySample.xaml.cs">
+      <DependentUpon>VisiblitySample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Welcome.xaml.cs">
+      <DependentUpon>Welcome.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -103,12 +92,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="HomePage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="MasterDetailSample.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
@@ -121,48 +104,50 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="BackgroundHelperSample.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <EmbeddedResource Include="Welcome.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ButtonGroupSample.xaml">
-      <Generator>MSBuild:Compile</Generator>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ListOfSamples.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ButtonHelperSample.xaml">
-      <Generator>MSBuild:Compile</Generator>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GridSample.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBasicSample.xaml">
-      <Generator>MSBuild:Compile</Generator>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ButtonSample.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormHorizontalSample.xaml">
-      <Generator>MSBuild:Compile</Generator>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TextSample.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormInlineSample.xaml">
-      <Generator>MSBuild:Compile</Generator>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormsSample.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="GridPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TabSample.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="InputGroupSample.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ResponsiveUtils.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TabPageSample.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TextHelperSample.xaml">
-      <Generator>MSBuild:Compile</Generator>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="VisiblitySample.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

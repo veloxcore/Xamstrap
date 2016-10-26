@@ -3,30 +3,50 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamstrapSample.MasterDetailSample"
               xmlns:Control="clr-namespace:Xamstrap;assembly=Xamstrap" Title="Responsive Master Detail">
-  <Control:ResponsiveMasterDetail x:Name="masterDetail" BackgroundColor="White" Title="Primary" ShowDetailHeader="False" CollapsableInMedium="True">
+  <Control:ResponsiveMasterDetail x:Name="masterDetail" BackgroundColor="White" Title="Primary" IsMasterVisible="{Binding IsMasterVisible}" CollapsableInMedium="True">
+
+    <!--Master Header-->
     <Control:ResponsiveMasterDetail.MasterHeader>
       <Grid WidthRequest="400">
-        <Label Text="Master" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"></Label>
+        <Label Text="Master Header" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"></Label>
       </Grid>
     </Control:ResponsiveMasterDetail.MasterHeader>
+
+    <!--detail Header-->
     <Control:ResponsiveMasterDetail.DetailHeader>
       <Grid>
-        <Label Text="Detail" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"></Label>
+        <Label Text="Detail Header" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"></Label>
       </Grid>
     </Control:ResponsiveMasterDetail.DetailHeader>
+
+    <!--Master Content-->
     <Control:ResponsiveMasterDetail.MasterContent>
       <StackLayout Orientation="Vertical">
-        <Label Text="This is master page content." HorizontalOptions="Start"></Label>
-        <Button x:Name="btnPress" Text="Layout" BackgroundColor="Black" TextColor="White"></Button>
-        <Button x:Name="btnPage" Text="Page" BackgroundColor="Black" TextColor="White"></Button>
+        <ListView x:Name="CustomerList" ItemsSource="{Binding Emails}" HorizontalOptions="StartAndExpand" SeparatorVisibility="None"
+                            SelectedItem="{Binding SelectedEmail, Mode=TwoWay}">
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <!--<customer:CustomerCell />-->
+              <ViewCell>
+                <Grid Padding="10,0,10,0" Margin="0">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+                  <Label Text="{Binding .}"  TextColor="Black" Margin="0" VerticalOptions="Center" />
+                </Grid>
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
       </StackLayout>
     </Control:ResponsiveMasterDetail.MasterContent>
+
+    <!--Detail Content-->
     <Control:ResponsiveMasterDetail.DetailContent>
       <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
-        <Label Text="This is detail page content."></Label>
-        <Button x:Name="btnWidthChange" Text="Toggle Detail Header" TextColor="White" BackgroundColor="Black"></Button>
-        <Button x:Name="btnToggleMaster" Text="Toggle Master" TextColor="White" BackgroundColor="Black"></Button>
+        <Label Text="{Binding SelectedEmail,StringFormat='Selected Email: {0}'}" HorizontalOptions="Center" VerticalOptions="Center"></Label>
       </StackLayout>
     </Control:ResponsiveMasterDetail.DetailContent>
+
   </Control:ResponsiveMasterDetail>
 </ContentPage>

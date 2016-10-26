@@ -8,9 +8,9 @@ using Xamarin.Forms;
 
 namespace XamstrapSample
 {
-    public partial class FormInlineSample : ContentPage
+    public partial class VisiblitySample : ContentPage
     {
-        public FormInlineSample()
+        public VisiblitySample()
         {
             InitializeComponent();
         }

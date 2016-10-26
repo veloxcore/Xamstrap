@@ -10,13 +10,23 @@ namespace XamstrapSample
 {
     public partial class MasterDetailSample : ContentPage
     {
+        #region Private Members
+        private MasterDetailData _sampleData { get; set; }
+        #endregion
         public MasterDetailSample()
         {
             InitializeComponent();
-            btnPress.Clicked += BtnPress_Clicked;
-            btnPage.Clicked += BtnPage_Clicked;
-            btnWidthChange.Clicked += BtnWidthChange_Clicked;
-            btnToggleMaster.Clicked += BtnToggleMaster_Clicked;
+            this._sampleData = new MasterDetailData();
+            this.Appearing += MasterDetailSample_Appearing;
+            //btnPress.Clicked += BtnPress_Clicked;
+            //btnPage.Clicked += BtnPage_Clicked;
+            //btnWidthChange.Clicked += BtnWidthChange_Clicked;
+            //btnToggleMaster.Clicked += BtnToggleMaster_Clicked;
+        }
+
+        private void MasterDetailSample_Appearing(object sender, EventArgs e)
+        {
+            this.BindingContext = _sampleData;            
         }
 
         private void BtnToggleMaster_Clicked(object sender, EventArgs e)
@@ -38,7 +48,7 @@ namespace XamstrapSample
         private void BtnPage_Clicked(object sender, EventArgs e)
         {
             masterDetail.IsMasterVisible = false;
-            masterDetail.DetailContent = new GridPage();
+            masterDetail.DetailContent = new GridSample();
         }
 
         private void BtnPress_Clicked(object sender, EventArgs e)

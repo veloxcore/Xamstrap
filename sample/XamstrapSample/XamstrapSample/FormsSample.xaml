@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamstrapSample.FormsSample"
+             xmlns:Control="clr-namespace:Xamstrap;assembly=Xamstrap"
+             xmlns:Attached="clr-namespace:Xamstrap.AttachedProperties;assembly=Xamstrap" Title="Forms">
+  <ScrollView>
+    <StackLayout>
+      <!--Form Basic-->
+      <Label Text="Example: Form Basic" TextColor="Black" FontSize="30" Margin="10,10,0,0"></Label>
+      <Label Text="Using form-basic class a simple basic form will be create, where elements are stacked." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
+
+      <Control:Div Attached:ResponsiveProperty.Class="form-basic" >
+       
+        <Label Text="Email Address" FontSize="15"></Label>
+        <Entry Placeholder="Email"></Entry>
+        
+        <Label Text="Password" FontSize="15"></Label>
+        <Entry Placeholder="Password" IsPassword="True"></Entry>
+        
+        <Button Text="Submit" Attached:ResponsiveProperty.Class="btn-sm btn-default"></Button>
+      </Control:Div>
+
+      <!--Form Inline-->
+      <Label Text="Example: Form Inline" TextColor="Black" FontSize="30" Margin="10,20,0,0"></Label>
+      <Label Text="Using form-inline class an inline form will be created, where elements are placed side-by-side until the screen edge and the remaining wrap to new line." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
+
+      <Control:Div Attached:ResponsiveProperty.Class="form-inline">
+        <Label Text="Name" Margin="0,20,0,0" FontSize="15"></Label>
+        <Entry Placeholder="Name"  Margin="0,10,0,0" WidthRequest="150"></Entry>
+
+        <Label Text="Email" Margin="0,20,0,0" FontSize="15"></Label>
+        <Entry Placeholder="Email"  Margin="0,10,0,0" WidthRequest="150"></Entry>
+
+        <Button Text="Send Invitation" Attached:ResponsiveProperty.Class="btn-sm btn-default"></Button>
+      </Control:Div>
+
+      <!--Form Horizontal-->
+      <Label Text="Example: Form Horizontal" TextColor="Black" FontSize="30" Margin="10,0,0,0"></Label>
+      <Label Text="Use Xamstrap's predefined grid classes to align labels and entries in a horizontal layout by adding form-horizontal." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
+
+      <Control:Div Attached:ResponsiveProperty.Class="form-horizontal">
+        <Label Text="Name" Attached:ResponsiveProperty.Class="col-xs-3" HeightRequest="50" Margin="10" FontSize="20"></Label>
+        <Entry Placeholder="Full Name" Attached:ResponsiveProperty.Class="col-xs-9" HeightRequest="50" Margin="10"></Entry>
+      </Control:Div>
+      
+      <Control:Div Attached:ResponsiveProperty.Class="form-horizontal">
+        <Label Text="Email" Attached:ResponsiveProperty.Class="col-xs-3" HeightRequest="50" Margin="10" FontSize="20"></Label>
+        <Entry Placeholder="Email Address" Attached:ResponsiveProperty.Class="col-xs-9" HeightRequest="50" Margin="10"></Entry>
+      </Control:Div>
+
+      <Control:Div Attached:ResponsiveProperty.Class="row">
+        <Button Text="Send Invitation" Attached:ResponsiveProperty.Class=" col-xs-offset-3 btn-sm btn-primary" WidthRequest="100"></Button>
+      </Control:Div>
+
+      <!--Input Group-->
+      <Label Text="Example: Input Group" TextColor="Black" FontSize="30" Margin="10,20,0,0"></Label>
+      <Label Text="Use Xamstrap's predefined grid classes to align labels, entries and buttons in a horizontal layout by adding input-group." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
+
+      <Control:Div Attached:ResponsiveProperty.Class="input-group">
+        <Label Text="@" FontSize="Large"></Label>
+        <Entry Placeholder="Email"></Entry>
+        <Button Text="Submit" WidthRequest="100"></Button>
+      </Control:Div>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

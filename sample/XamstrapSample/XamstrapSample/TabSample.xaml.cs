@@ -8,9 +8,9 @@ using Xamarin.Forms;
 
 namespace XamstrapSample
 {
-    public partial class BackgroundHelperSample : ContentPage
+    public partial class TabSample : ContentPage
     {
-        public BackgroundHelperSample()
+        public TabSample()
         {
             InitializeComponent();
         }

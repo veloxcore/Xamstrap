@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamstrapSample.TabSample"
+             xmlns:Control="clr-namespace:Xamstrap;assembly=Xamstrap"
+             xmlns:Attached="clr-namespace:Xamstrap.AttachedProperties;assembly=Xamstrap" Title="Tab">
+  <Control:Tab TabHeaderTextColor="Black" TabHeaderBackgroundColor="White" IsFixedTab="False" >
+    <Control:Tab.TabItems>
+      <Control:TabItem Title="Tab 1">
+        <Label Text="This is tab page 1" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" TextColor="Gray"></Label>
+      </Control:TabItem>
+      <Control:TabItem Title="Tab 2">
+        <Label Text="This is tab page 2" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" TextColor="Gray"></Label>
+      </Control:TabItem>
+      <Control:TabItem Title="Tab 3" IsSelected="true">
+        <Label Text="This is tab page 3" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" TextColor="Gray"></Label>
+      </Control:TabItem>
+      <Control:TabItem Title="Tab 4">
+        <Label Text="This is tab page 4" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" TextColor="Gray"></Label>
+      </Control:TabItem>
+      <Control:TabItem Title="Tab 5" IsSelected="true">
+        <Label Text="This is tab page 5" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" TextColor="Gray"></Label>
+      </Control:TabItem>
+      <Control:TabItem Title="Tab 6">
+        <Label Text="This is tab page 6" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" TextColor="Gray"></Label>
+      </Control:TabItem>
+      <Control:TabItem Title="Tab 7 Long Title" >
+        <Label Text="This is tab page 7 with long title." BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" TextColor="Gray"></Label>
+      </Control:TabItem>     
+    </Control:Tab.TabItems>
+  </Control:Tab>
+</ContentPage>

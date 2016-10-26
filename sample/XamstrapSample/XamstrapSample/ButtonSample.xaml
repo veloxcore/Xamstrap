@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamstrapSample.ButtonSample"
+             xmlns:Control="clr-namespace:Xamstrap;assembly=Xamstrap"
+             xmlns:Attached="clr-namespace:Xamstrap.AttachedProperties;assembly=Xamstrap" Title="Buttons">
+  <ScrollView>
+    <StackLayout>
+      <!--Button Styles-->
+      <Label Text="Example: Button Styles" TextColor="Black" FontSize="30" Margin="10,10,0,0"></Label>
+      <Label Text="Use any of the available button style classes like btn-default, btn-primary, btn-success, btn-info, btn-warning, btn-danger,btn-link to quickly create a styled button." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
+
+      <Button Text="Default"  Attached:ResponsiveProperty.Class="btn-default"></Button>
+      <Button Text="Primary"  Attached:ResponsiveProperty.Class="btn-primary"></Button>
+      <Button Text="Success"  Attached:ResponsiveProperty.Class="btn-success"></Button>
+      <Button Text="Info"     Attached:ResponsiveProperty.Class="btn-info   "></Button>
+      <Button Text="Warning"  Attached:ResponsiveProperty.Class="btn-warning"></Button>
+      <Button Text="Danger"   Attached:ResponsiveProperty.Class="btn-danger "></Button>
+      <Button Text="Link"     Attached:ResponsiveProperty.Class="btn-link   "></Button>
+
+      <!--Button Size-->
+      <Label Text="Example: Button Sizes" TextColor="Black" FontSize="30" Margin="10,0,0,0"></Label>
+      <Label Text="Differnt size of button are created using button size classes btn-xs, btn-sm, btn-md, btn-lg. In case of buttons only the height of buttons are calculated by this classes, width of the buttons must be provided using WidthRequest." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
+
+      <Button Text="Extra Small" Attached:ResponsiveProperty.Class="btn-xs"></Button>
+      <Button Text="Small" Attached:ResponsiveProperty.Class="btn-sm"></Button>
+      <Button Text="Medium" Attached:ResponsiveProperty.Class="btn-md"></Button>
+      <Button Text="Large" Attached:ResponsiveProperty.Class="btn-lg"></Button>
+
+      <!--Button Size With Style-->
+      <Label Text="Example: Button Sizes" TextColor="Black" FontSize="30" Margin="10,20,0,0"></Label>
+      <Label Text="Differnt size of button are created using button size classes btn-xs, btn-sm, btn-md, btn-lg. In case of buttons only the height of buttons are calculated by this classes, width of the buttons must be provided using WidthRequest." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
+
+      <Button Text="Extra Small" Attached:ResponsiveProperty.Class="btn-xs btn-primary"></Button>
+      <Button Text="Small" Attached:ResponsiveProperty.Class="btn-sm btn-success"></Button>
+      <Button Text="Medium" Attached:ResponsiveProperty.Class="btn-md btn-info"></Button>
+      <Button Text="Large" Attached:ResponsiveProperty.Class="btn-lg btn-danger"></Button>
+
+      <!--Button Group-->
+      <Label Text="Example: Button Group" TextColor="Black" FontSize="30" Margin="10,20,0,0"></Label>
+      <Label Text="btn-group class is used to create a button group.Button's background color must be required inorder to btn-group to work perfectly." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
+
+      <Control:Div Attached:ResponsiveProperty.Class="btn-group">
+        <Button Text="Button 1" Attached:ResponsiveProperty.Class="btn-primary"></Button>
+        <Button Text="Button 2" Attached:ResponsiveProperty.Class="btn-primary"></Button>
+        <Button Text="Button 3" Attached:ResponsiveProperty.Class="btn-primary"></Button>
+        <Button Text="Button 4" Attached:ResponsiveProperty.Class="btn-primary"></Button>
+        <Button Text="Button 5" Attached:ResponsiveProperty.Class="btn-primary"></Button>
+      </Control:Div>
+
+      <!--Button Group-->
+      <Label Text="Example: Button Group Justified" TextColor="Black" FontSize="30" Margin="10,20,0,0"></Label>
+      <Label Text="btn-group-justified class is used to create a button group jusstified.It will divide equal space among aal the button and arrange button side-by-side.Button's background color must be required inorder to btn-group to work perfectly." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
+
+      <Control:Div Attached:ResponsiveProperty.Class="btn-group-justified" Margin="0,0,0,10">
+        <Button Text="Button 1" Attached:ResponsiveProperty.Class="btn-primary"></Button>
+        <Button Text="Button 2" Attached:ResponsiveProperty.Class="btn-primary"></Button>
+        <Button Text="Button 3" Attached:ResponsiveProperty.Class="btn-primary"></Button>
+        <Button Text="Button 4" Attached:ResponsiveProperty.Class="btn-primary"></Button>
+        <Button Text="Button 5" Attached:ResponsiveProperty.Class="btn-primary"></Button>
+      </Control:Div>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

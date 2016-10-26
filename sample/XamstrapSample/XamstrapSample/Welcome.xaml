@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamstrapSample.Welcome"
+             xmlns:Control="clr-namespace:Xamstrap;assembly=Xamstrap"
+             xmlns:Attached="clr-namespace:Xamstrap.AttachedProperties;assembly=Xamstrap">
+  <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+    <Label Text="Xamstrap" FontSize="80" HorizontalOptions="Center"></Label>
+    <Label Text="A Xamarin Forms responsive toolkit" HorizontalOptions="Center"></Label>
+    <Button Text="View Samples" x:Name="btnViewSamples"></Button>
+    <Label Text=" © Copyright 2016 Veloxcore Team" Margin="0,30,0,0" HorizontalOptions="Center"></Label>
+  </StackLayout>
+</ContentPage>

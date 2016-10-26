@@ -8,9 +8,9 @@ using Xamarin.Forms;
 
 namespace XamstrapSample
 {
-    public partial class FormBasicSample : ContentPage
+    public partial class GridSample : ContentPage
     {
-        public FormBasicSample()
+        public GridSample()
         {
             InitializeComponent();
         }

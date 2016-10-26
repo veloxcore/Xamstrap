@@ -12,8 +12,9 @@ namespace XamstrapSample
         public App()
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new XamstrapSample.HomePage());
+            var page = new XamstrapSample.Welcome();
+            NavigationPage.SetHasNavigationBar(page, false);
+            MainPage = new NavigationPage(page);
         }
 
         protected override void OnStart()
