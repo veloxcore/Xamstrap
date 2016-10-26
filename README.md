@@ -1,4 +1,6 @@
 # Xamstrap
+[![NuGet](https://img.shields.io/badge/nuget-V0.4.0--pre04-blue.svg)](https://www.nuget.org/packages/Xamstrap/)
+
 A Xamarin Forms responsive toolkit. It is currently in prerelease as we are testing it and improving it day by day. This toolkit is similar to what we get in Bootstrap. So if you are familier with Bootstrap you feel right at home with this toolkit.
 
 Below are features already in the toolkit.
