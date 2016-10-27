@@ -29,6 +29,7 @@ namespace Xamstrap.ClassProcessor
                 {
                     yPos += lastChildHeight;
                     xPos = x;
+                    totalWidth = 0;
                 }
 
                 var region = new Rectangle(xPos + child.Margin.Left, yPos + child.Margin.Top, childWidth, childHeight);
@@ -50,15 +51,22 @@ namespace Xamstrap.ClassProcessor
             // Measure children height
             double height = 0d;
             double lastChildHeight = 0d;
+            double totalWidth = 0;
+            double totalElementHeight = 0d;
             foreach (var child in element.Children)
             {
                 var size = child.Measure(internalWidth, internalHeight);
 
                 lastChildHeight = Math.Max(size.Request.Height + child.Margin.VerticalThickness, lastChildHeight);
-
+                totalWidth += size.Request.Width + child.Margin.HorizontalThickness;
+                totalElementHeight = lastChildHeight;
             }
 
-            height += element.Padding.VerticalThickness + lastChildHeight;
+            if (totalWidth > internalWidth)
+            {
+                totalElementHeight = lastChildHeight * 2;
+            }
+            height += element.Padding.VerticalThickness + totalElementHeight;
 
             return new SizeRequest(new Size(internalWidth, height), new Size(0, 0));
         }
