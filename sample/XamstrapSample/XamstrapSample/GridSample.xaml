@@ -220,7 +220,25 @@
           <Label  HorizontalOptions="Center" VerticalOptions="Center" Text="col-md-6 col-md-offset-3"></Label>
         </Grid>
       </Control:Div>
-      
+
+      <!--Offset Overriding-->
+      <Label Text="Offsetting Overriding" TextColor="Black" FontSize="30" Margin="10,20,0,0"></Label>
+      <Label Text="You can also override offsets from lower grid tiers with col-*-offset-0 classes." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
+
+      <!-- Sample col-sm-(4/4/4)/col-xs-(6/6/6)-->
+      <Control:Div Attached:ResponsiveProperty.Class="row">
+        <Grid Attached:ResponsiveProperty.Class="col-xs-6 col-sm-4" HeightRequest="50" BackgroundColor="#E0E0E0">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" Text="col-xs-6  col-sm-4"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-xs-6 col-sm-4" HeightRequest="50" BackgroundColor="#757575">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" Text="col-xs-6  col-sm-4"></Label>
+        </Grid>
+
+        <Grid Attached:ResponsiveProperty.Class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-0" HeightRequest="50" BackgroundColor="#E0E0E0">
+          <Label  HorizontalOptions="Center" VerticalOptions="Center" Text="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-0"></Label>
+        </Grid>
+      </Control:Div>
     </StackLayout>
   </ScrollView>
 </ContentPage>

@@ -36,7 +36,7 @@ namespace Xamstrap.ClassProcessor
                 for (int i = currentDeviceSize; i >= 0; i--)
                 {
                     columnsOffsetGrid = columnsOffsetData[(DeviceSize)Enum.Parse(typeof(DeviceSize), i.ToString())];
-                    if (columnsOffsetGrid > 0)
+                    if (columnsOffsetGrid > -1)
                         break;
                 }
 
@@ -123,7 +123,7 @@ namespace Xamstrap.ClassProcessor
                 for (int i = currentDeviceSize; i >= 0; i--)
                 {
                     columnsOffsetGrid = columnsOffsetData[(DeviceSize)Enum.Parse(typeof(DeviceSize), i.ToString())];
-                    if (columnsOffsetGrid > 0)
+                    if (columnsOffsetGrid > -1)
                         break;
                 }
 
@@ -141,7 +141,7 @@ namespace Xamstrap.ClassProcessor
                 double childHeight = request.Request.Height + child.Margin.VerticalThickness;
                 double childOffsetWidth;
 
-                if (columnsOffsetGrid > 0)
+                if (columnsOffsetGrid > -1)
                 {
                     childOffsetWidth = (columnsOffsetGrid / 12d) * width;
                     totalChildRowWidth += childOffsetWidth;
