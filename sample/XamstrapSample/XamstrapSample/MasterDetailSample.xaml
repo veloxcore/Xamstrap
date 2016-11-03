@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamstrapSample.MasterDetailSample"
               xmlns:Control="clr-namespace:Xamstrap;assembly=Xamstrap" Title="Responsive Master Detail">
-  <Control:ResponsiveMasterDetail x:Name="masterDetail" BackgroundColor="White" Title="Primary" IsMasterVisible="{Binding IsMasterVisible}" CollapsableInMedium="True">
+  <Control:ResponsiveMasterDetail x:Name="masterDetail" BackgroundColor="White" Title="Primary" IsMasterVisible="{Binding IsMasterVisible, Mode=TwoWay}">
 
     <!--Master Header-->
     <Control:ResponsiveMasterDetail.MasterHeader>

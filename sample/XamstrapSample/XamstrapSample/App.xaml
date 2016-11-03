@@ -2,9 +2,19 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamstrapSample.App">
-  <Application.Resources>
+    <Application.Resources>
 
-    <!-- Application resource dictionary -->
+        <!-- Application resource dictionary -->
+        
+        <!--Custom theme creation-->
+        <!--<ResourceDictionary>
+            <Color x:Key="btn-default-background-color">Blue</Color>
+            <Color x:Key="btn-default-text-color"      >#FFFFFF</Color>
+            <Color x:Key="btn-default-border-color"    >#424242</Color>
+            <x:Int16  x:Key="btn-default-border-width">0</x:Int16>
 
-  </Application.Resources>
+        </ResourceDictionary>-->
+
+
+    </Application.Resources>
 </Application>

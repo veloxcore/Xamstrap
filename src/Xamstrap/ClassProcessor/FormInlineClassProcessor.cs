@@ -15,6 +15,7 @@ namespace Xamstrap.ClassProcessor
             double xPos = x, yPos = y;
             double lastChildHeight = 0;
             double totalWidth = 0;
+            DeviceSize deviceSize = Common.GetCurrentDeviceSize();
 
             foreach (var child in element.Children)
             {
@@ -25,21 +26,37 @@ namespace Xamstrap.ClassProcessor
                 lastChildHeight = Math.Max(childHeight + child.Margin.VerticalThickness, lastChildHeight);
 
                 totalWidth += childWidth + child.Margin.HorizontalThickness;
-                if (totalWidth > width)
+                if (deviceSize == DeviceSize.ExtraSmall || deviceSize == DeviceSize.Small)
                 {
-                    yPos += lastChildHeight;
                     xPos = x;
-                    totalWidth = 0;
+                    childWidth = width;
                 }
+                else
+                {
+                    if (totalWidth > width)
+                    {
+                        yPos += lastChildHeight;
+                        xPos = x;
+                        totalWidth = 0;
+                    }
+                }                
 
                 var region = new Rectangle(xPos + child.Margin.Left, yPos + child.Margin.Top, childWidth, childHeight);
                 child.Layout(region);               
-                xPos += childWidth + child.Margin.HorizontalThickness;
+                if (deviceSize == DeviceSize.ExtraSmall || deviceSize == DeviceSize.Small)
+                {
+                    yPos += childHeight + child.Margin.VerticalThickness;
+                }
+                else
+                {
+                    xPos += childWidth + child.Margin.HorizontalThickness;
+                }
             }
         }
 
         public static SizeRequest ProcessFormInlineSizeRequest(this Layout<View> element, double widthConstraint, double heightConstraint)
         {
+            DeviceSize device = Common.GetCurrentDeviceSize();
             if (element.WidthRequest > 0)
                 widthConstraint = Math.Min(element.WidthRequest, widthConstraint);
             if (element.HeightRequest > 0)
@@ -52,21 +69,34 @@ namespace Xamstrap.ClassProcessor
             double height = 0d;
             double lastChildHeight = 0d;
             double totalWidth = 0;
-            double totalElementHeight = 0d;
+            double totalHeight = 0d;
+            int totalRow = 1;
             foreach (var child in element.Children)
             {
                 var size = child.Measure(internalWidth, internalHeight);
-
                 lastChildHeight = Math.Max(size.Request.Height + child.Margin.VerticalThickness, lastChildHeight);
                 totalWidth += size.Request.Width + child.Margin.HorizontalThickness;
-                totalElementHeight = lastChildHeight;
+                if (device == DeviceSize.ExtraSmall || device == DeviceSize.Small)
+                {
+                    totalHeight += size.Request.Height + child.Margin.VerticalThickness;
+                }
+                else
+                {
+                    totalHeight = lastChildHeight;
+                    if (totalWidth > internalWidth)
+                    {
+                        totalRow += 1;
+                        totalWidth = 0;
+                    }
+                }
+
             }
 
-            if (totalWidth > internalWidth)
+            height = element.Padding.VerticalThickness + totalHeight;
+            if (totalRow > 1)
             {
-                totalElementHeight = lastChildHeight * 2;
+                height = element.Padding.VerticalThickness + (totalHeight * totalRow);
             }
-            height += element.Padding.VerticalThickness + totalElementHeight;
 
             return new SizeRequest(new Size(internalWidth, height), new Size(0, 0));
         }

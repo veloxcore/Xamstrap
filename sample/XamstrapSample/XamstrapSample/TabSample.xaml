@@ -6,13 +6,13 @@
              xmlns:Attached="clr-namespace:Xamstrap.AttachedProperties;assembly=Xamstrap" Title="Tab">
   <Control:Tab TabHeaderTextColor="Black" TabHeaderBackgroundColor="White" IsFixedTab="False" >
     <Control:Tab.TabItems>
-      <Control:TabItem Title="Tab 1">
-        <Label Text="This is tab page 1" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" TextColor="Gray"></Label>
+      <Control:TabItem Title="Tab 1"  IsSelected="true">
+        <Label Text="This is tab page 1.Slider finger over tab titles to scroll between different tab.Default selected tab will be specified by setting IsSelected to true." BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" TextColor="Gray" Margin="10,0,0,0"></Label>
       </Control:TabItem>
       <Control:TabItem Title="Tab 2">
         <Label Text="This is tab page 2" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" TextColor="Gray"></Label>
       </Control:TabItem>
-      <Control:TabItem Title="Tab 3" IsSelected="true">
+      <Control:TabItem Title="Tab 3">
         <Label Text="This is tab page 3" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" TextColor="Gray"></Label>
       </Control:TabItem>
       <Control:TabItem Title="Tab 4">

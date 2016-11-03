@@ -21,7 +21,7 @@ namespace Xamstrap.ClassProcessor
             {
                 var entry = (element.Children.First(o => o is Entry) as Entry);
                 var request = entry.Measure(width, height);
-                entryHeight = request.Request.Height;
+                entryHeight = request.Request.Height + entry.Margin.VerticalThickness;
             }
 
             //processing total label width
@@ -59,7 +59,7 @@ namespace Xamstrap.ClassProcessor
                 {
                     childWidth = width  - totalLabelWidth - totalButtonWidth;
                 }
-                var region = new Rectangle(xPos, yPos, childWidth, childHeight);
+                var region = new Rectangle(xPos, yPos + child.Margin.Top, childWidth, childHeight);
                 child.Layout(region);
                 if (child is Label)
                 {
@@ -81,13 +81,14 @@ namespace Xamstrap.ClassProcessor
 
             // Measure children height
             double height = 0d;
+            double lastChildHeight = 0d;
             foreach (var child in element.Children)
             {
                 var size = child.Measure(internalWidth, internalHeight);
-                height += size.Request.Height;
+                lastChildHeight = Math.Max(size.Request.Height + child.Margin.VerticalThickness, lastChildHeight);
             }
 
-            height += element.Padding.VerticalThickness;
+            height += element.Padding.VerticalThickness + lastChildHeight;
 
             return new SizeRequest(new Size(internalWidth, height), new Size(0, 0));
         }

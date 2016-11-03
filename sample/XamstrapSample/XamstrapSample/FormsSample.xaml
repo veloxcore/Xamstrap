@@ -12,27 +12,33 @@
 
       <Control:Div Attached:ResponsiveProperty.Class="form-basic" >
        
-        <Label Text="Email Address" FontSize="15"></Label>
+        <Label Text="Email Address"  FontSize="17"></Label>
         <Entry Placeholder="Email"></Entry>
         
-        <Label Text="Password" FontSize="15"></Label>
+        <Label Text="Password"  FontSize="17"></Label>
         <Entry Placeholder="Password" IsPassword="True"></Entry>
         
-        <Button Text="Submit" Attached:ResponsiveProperty.Class="btn-sm btn-default"></Button>
+        <Button Text="Submit" Attached:ResponsiveProperty.Class="btn-sm btn-primary"></Button>
       </Control:Div>
 
       <!--Form Inline-->
       <Label Text="Example: Form Inline" TextColor="Black" FontSize="30" Margin="10,20,0,0"></Label>
-      <Label Text="Using form-inline class an inline form will be created, where elements are placed side-by-side until the screen edge and the remaining wrap to new line." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
+      <Label Text="Using form-inline class an inline form will be created, where elements are stacked for extra small(xs), small(sm) screen size. For medium(md), large(lg) and extra large(xl) screen size elements are placed side-by-side until the screen edge and the remaining wrap to new line." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
 
       <Control:Div Attached:ResponsiveProperty.Class="form-inline">
-        <Label Text="Name" Margin="0,20,0,0" FontSize="15"></Label>
-        <Entry Placeholder="Name"  Margin="0,10,0,0" WidthRequest="150"></Entry>
+        <Label Text="First Name" Margin="0,20,0,0"  FontSize="17"></Label>
+        <Entry Placeholder="Ex. John"  Margin="0,10,0,0" WidthRequest="150"></Entry>
 
-        <Label Text="Email" Margin="0,20,0,0" FontSize="15"></Label>
-        <Entry Placeholder="Email"  Margin="0,10,0,0" WidthRequest="150"></Entry>
+        <Label Text="Last Name" Margin="0,20,0,0"  FontSize="17"></Label>
+        <Entry Placeholder="Ex. Doe"  Margin="0,10,0,0" WidthRequest="150"></Entry>
+        
+         <Label Text="User Name" Margin="0,20,0,0"  FontSize="17"></Label>
+        <Entry Placeholder="Ex. john7676"  Margin="0,10,0,0" WidthRequest="150"></Entry>
 
-        <Button Text="Send Invitation" Attached:ResponsiveProperty.Class="btn-sm btn-default"></Button>
+        <Label Text="Email" Margin="0,20,0,0"  FontSize="17"></Label>
+        <Entry Placeholder="Ex. johndoe@example.com"  Margin="0,10,0,0" WidthRequest="150"></Entry>
+
+        <Button Text="Sign Up" Attached:ResponsiveProperty.Class="btn-sm btn-primary"></Button>
       </Control:Div>
 
       <!--Form Horizontal-->
@@ -40,27 +46,27 @@
       <Label Text="Use Xamstrap's predefined grid classes to align labels and entries in a horizontal layout by adding form-horizontal." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
 
       <Control:Div Attached:ResponsiveProperty.Class="form-horizontal">
-        <Label Text="Name" Attached:ResponsiveProperty.Class="col-xs-3" HeightRequest="50" Margin="10" FontSize="20"></Label>
-        <Entry Placeholder="Full Name" Attached:ResponsiveProperty.Class="col-xs-9" HeightRequest="50" Margin="10"></Entry>
+        <Label Text="Name" Attached:ResponsiveProperty.Class="col-sm-3"  FontSize="17"></Label>
+        <Entry Placeholder="Full Name" Attached:ResponsiveProperty.Class="col-sm-9"></Entry>
       </Control:Div>
       
       <Control:Div Attached:ResponsiveProperty.Class="form-horizontal">
-        <Label Text="Email" Attached:ResponsiveProperty.Class="col-xs-3" HeightRequest="50" Margin="10" FontSize="20"></Label>
-        <Entry Placeholder="Email Address" Attached:ResponsiveProperty.Class="col-xs-9" HeightRequest="50" Margin="10"></Entry>
+        <Label Text="Email" Attached:ResponsiveProperty.Class="col-sm-3"  FontSize="17"></Label>
+        <Entry Placeholder="Email Address" Attached:ResponsiveProperty.Class="col-sm-9"></Entry>
       </Control:Div>
 
       <Control:Div Attached:ResponsiveProperty.Class="row">
-        <Button Text="Send Invitation" Attached:ResponsiveProperty.Class=" col-xs-offset-3 btn-sm btn-primary" WidthRequest="100"></Button>
+        <Button Text="Send Invitation" Attached:ResponsiveProperty.Class=" col-sm-offset-3 btn-sm btn-primary" WidthRequest="200"></Button>
       </Control:Div>
 
       <!--Input Group-->
       <Label Text="Example: Input Group" TextColor="Black" FontSize="30" Margin="10,20,0,0"></Label>
       <Label Text="Use Xamstrap's predefined grid classes to align labels, entries and buttons in a horizontal layout by adding input-group." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
 
-      <Control:Div Attached:ResponsiveProperty.Class="input-group">
+      <Control:Div Attached:ResponsiveProperty.Class="input-group" Margin="0,0,0,10">
         <Label Text="@" FontSize="Large"></Label>
-        <Entry Placeholder="Email"></Entry>
-        <Button Text="Submit" WidthRequest="100"></Button>
+        <Entry Placeholder="Email" Margin="0,10,0,0"></Entry>
+        <Button Text="Submit" Attached:ResponsiveProperty.Class="btn-sm btn-primary" WidthRequest="100"></Button>
       </Control:Div>
     </StackLayout>
   </ScrollView>

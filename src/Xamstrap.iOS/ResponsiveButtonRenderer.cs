@@ -135,17 +135,17 @@ namespace Xamstrap.iOS
                 Xamarin.Forms.Application.Current.Resources?.TryGetValue(Constant.BtnDefaultBorderWidth, out borderWidth);
 
                 if (backgroundColor != null)
-                    Element.BackgroundColor = Color.FromHex(backgroundColor.ToString());
+                    Element.BackgroundColor = (Color)backgroundColor;
                 else
                     Element.BackgroundColor = Color.FromHex("#fff");
 
                 if (textColor != null)
-                    Element.TextColor = Color.FromHex(textColor.ToString());
+                    Element.TextColor = (Color)textColor;
                 else
                     Element.TextColor = Color.FromHex("#333");
 
                 if (borderColor != null)
-                    Element.BorderColor = Color.FromHex(borderColor.ToString());
+                    Element.BorderColor = (Color)borderColor;
                 else
                     Element.BorderColor = Color.FromHex("#ccc");
 
@@ -168,17 +168,17 @@ namespace Xamstrap.iOS
                 Xamarin.Forms.Application.Current.Resources?.TryGetValue(Constant.BtnPrimaryBorderWidth, out borderWidth);
 
                 if (backgroundColor != null)
-                    Element.BackgroundColor = Color.FromHex(backgroundColor.ToString());
+                    Element.BackgroundColor = (Color)backgroundColor;
                 else
                     Element.BackgroundColor = Color.FromHex("#337ab7");
 
                 if (textColor != null)
-                    Element.TextColor = Color.FromHex(textColor.ToString());
+                    Element.TextColor = (Color)textColor;
                 else
                     Element.TextColor = Color.FromHex("#ffffff");
 
                 if (borderColor != null)
-                    Element.BorderColor = Color.FromHex(borderColor.ToString());
+                    Element.BorderColor = (Color)borderColor;
                 else
                     Element.BorderColor = Color.FromHex("#2e6da4");
 
@@ -201,17 +201,17 @@ namespace Xamstrap.iOS
                 Xamarin.Forms.Application.Current.Resources?.TryGetValue(Constant.BtnSuccessBorderWidth, out borderWidth);
 
                 if (backgroundColor != null)
-                    Element.BackgroundColor = Color.FromHex(backgroundColor.ToString());
+                    Element.BackgroundColor = (Color)backgroundColor;
                 else
                     Element.BackgroundColor = Color.FromHex("#5cb85c");
 
                 if (textColor != null)
-                    Element.TextColor = Color.FromHex(textColor.ToString());
+                    Element.TextColor = (Color)textColor;
                 else
                     Element.TextColor = Color.FromHex("#fff");
 
                 if (borderColor != null)
-                    Element.BorderColor = Color.FromHex(borderColor.ToString());
+                    Element.BorderColor = (Color)borderColor;
                 else
                     Element.BorderColor = Color.FromHex("#4cae4c");
 
@@ -234,17 +234,17 @@ namespace Xamstrap.iOS
                 Xamarin.Forms.Application.Current.Resources?.TryGetValue(Constant.BtnInfoBorderWidth, out borderWidth);
 
                 if (backgroundColor != null)
-                    Element.BackgroundColor = Color.FromHex(backgroundColor.ToString());
+                    Element.BackgroundColor = (Color)backgroundColor;
                 else
                     Element.BackgroundColor = Color.FromHex("#5bc0de");
 
                 if (textColor != null)
-                    Element.TextColor = Color.FromHex(textColor.ToString());
+                    Element.TextColor = (Color)textColor;
                 else
                     Element.TextColor = Color.FromHex("#fff");
 
                 if (borderColor != null)
-                    Element.BorderColor = Color.FromHex(borderColor.ToString());
+                    Element.BorderColor = (Color)borderColor;
                 else
                     Element.BorderColor = Color.FromHex("#46b8da");
 
@@ -267,17 +267,17 @@ namespace Xamstrap.iOS
                 Xamarin.Forms.Application.Current.Resources?.TryGetValue(Constant.BtnWarningBorderWidth, out borderWidth);
 
                 if (backgroundColor != null)
-                    Element.BackgroundColor = Color.FromHex(backgroundColor.ToString());
+                    Element.BackgroundColor = (Color)backgroundColor;
                 else
                     Element.BackgroundColor = Color.FromHex("#f0ad4e");
 
                 if (textColor != null)
-                    Element.TextColor = Color.FromHex(textColor.ToString());
+                    Element.TextColor = (Color)textColor;
                 else
                     Element.TextColor = Color.FromHex("#fff");
 
                 if (borderColor != null)
-                    Element.BorderColor = Color.FromHex(borderColor.ToString());
+                    Element.BorderColor = (Color)borderColor;
                 else
                     Element.BorderColor = Color.FromHex("#eea236");
 
@@ -300,17 +300,17 @@ namespace Xamstrap.iOS
                 Xamarin.Forms.Application.Current.Resources?.TryGetValue(Constant.BtnDangerBorderWidth, out borderWidth);
 
                 if (backgroundColor != null)
-                    Element.BackgroundColor = Color.FromHex(backgroundColor.ToString());
+                    Element.BackgroundColor = (Color)backgroundColor;
                 else
                     Element.BackgroundColor = Color.FromHex("#d9534f");
 
                 if (textColor != null)
-                    Element.TextColor = Color.FromHex(textColor.ToString());
+                    Element.TextColor = (Color)textColor;
                 else
                     Element.TextColor = Color.FromHex("#fff");
 
                 if (borderColor != null)
-                    Element.BorderColor = Color.FromHex(borderColor.ToString());
+                    Element.BorderColor = (Color)borderColor;
                 else
                     Element.BorderColor = Color.FromHex("#d43f3a");
 
@@ -333,17 +333,17 @@ namespace Xamstrap.iOS
                 Xamarin.Forms.Application.Current.Resources?.TryGetValue(Constant.BtnLinkBorderWidth, out borderWidth);
 
                 if (backgroundColor != null)
-                    Element.BackgroundColor = Color.FromHex(backgroundColor.ToString());
+                    Element.BackgroundColor = (Color)backgroundColor;
                 else
                     Element.BackgroundColor = Color.Transparent;
 
                 if (textColor != null)
-                    Element.TextColor = Color.FromHex(textColor.ToString());
+                    Element.TextColor = (Color)textColor;
                 else
                     Element.TextColor = Color.FromHex("#337ab7");
 
                 if (borderColor != null)
-                    Element.BorderColor = Color.FromHex(borderColor.ToString());
+                    Element.BorderColor = (Color)borderColor;
 
                 if (borderWidth != null)
                     Element.BorderWidth = Convert.ToInt16(borderWidth);

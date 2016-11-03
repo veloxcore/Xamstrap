@@ -44,8 +44,6 @@
         <Button Text="Button 1" Attached:ResponsiveProperty.Class="btn-primary"></Button>
         <Button Text="Button 2" Attached:ResponsiveProperty.Class="btn-primary"></Button>
         <Button Text="Button 3" Attached:ResponsiveProperty.Class="btn-primary"></Button>
-        <Button Text="Button 4" Attached:ResponsiveProperty.Class="btn-primary"></Button>
-        <Button Text="Button 5" Attached:ResponsiveProperty.Class="btn-primary"></Button>
       </Control:Div>
 
       <!--Button Group-->
@@ -56,8 +54,6 @@
         <Button Text="Button 1" Attached:ResponsiveProperty.Class="btn-primary"></Button>
         <Button Text="Button 2" Attached:ResponsiveProperty.Class="btn-primary"></Button>
         <Button Text="Button 3" Attached:ResponsiveProperty.Class="btn-primary"></Button>
-        <Button Text="Button 4" Attached:ResponsiveProperty.Class="btn-primary"></Button>
-        <Button Text="Button 5" Attached:ResponsiveProperty.Class="btn-primary"></Button>
       </Control:Div>
     </StackLayout>
   </ScrollView>
