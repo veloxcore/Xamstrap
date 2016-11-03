@@ -94,7 +94,7 @@
 
       <!--Offsetting columns-->
       <Label Text="Offsetting columns"  FontSize="30" Margin="10,20,0,0"></Label>
-      <Label Text="Move columns to the right using .col-md-offset-* classes. These classes increase the left margin of a column by * columns. For example, .col-md-offset-4 moves .col-md-4 over four columns."  FontSize="15" Margin="10,0,0,10"></Label>
+      <Label Text="Move columns to the right using col-md-offset-* classes. These classes increase the left margin of a column by * columns. For example, col-md-offset-4 moves col-md-4 over four columns."  FontSize="15" Margin="10,0,0,10"></Label>
 
       <!-- Sample col-xs-(4/4)/col-xs-offset-(4)-->
       <Control:Div Attached:ResponsiveProperty.Class="row">
