@@ -4,28 +4,28 @@
              x:Class="XamstrapSample.TabSample"
              xmlns:Control="clr-namespace:Xamstrap;assembly=Xamstrap"
              xmlns:Attached="clr-namespace:Xamstrap.AttachedProperties;assembly=Xamstrap" Title="Tab">
-  <Control:Tab TabHeaderTextColor="Black" TabHeaderBackgroundColor="White" IsFixedTab="False" >
-    <Control:Tab.TabItems>
-      <Control:TabItem Title="Tab 1"  IsSelected="true">
-        <Label Text="This is tab page 1.Slider finger over tab titles to scroll between different tab.Default selected tab will be specified by setting IsSelected to true." BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" TextColor="Gray" Margin="10,0,0,0"></Label>
+    <Control:Tab TabHeaderTextColor="Black" TabHeaderBackgroundColor="White" IsFixedTab="False" AutomationId="Tab">
+    <Control:Tab.TabItems AutomationId="TabItems">
+      <Control:TabItem Title="Tab 1"  IsSelected="true" AutomationId="TabItem1">
+        <Label Text="This is tab page 1.Slider finger over tab titles to scroll between different tab.Default selected tab will be specified by setting IsSelected to true." BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" TextColor="Gray" Margin="10,0,0,0" AutomationId="Label29"></Label>
       </Control:TabItem>
-      <Control:TabItem Title="Tab 2">
-        <Label Text="This is tab page 2" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" TextColor="Gray"></Label>
+      <Control:TabItem Title="Tab 2" AutomationId="TabItem2">
+        <Label Text="This is tab page 2" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" TextColor="Gray" AutomationId="Label30"></Label>
       </Control:TabItem>
-      <Control:TabItem Title="Tab 3">
-        <Label Text="This is tab page 3" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" TextColor="Gray"></Label>
+      <Control:TabItem Title="Tab 3" AutomationId="TabItem3">
+        <Label Text="This is tab page 3" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" TextColor="Gray" AutomationId="Label31"></Label>
       </Control:TabItem>
-      <Control:TabItem Title="Tab 4">
-        <Label Text="This is tab page 4" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" TextColor="Gray"></Label>
+      <Control:TabItem Title="Tab 4" AutomationId="TabItem4">
+        <Label Text="This is tab page 4" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" TextColor="Gray" AutomationId="Label32"></Label>
       </Control:TabItem>
-      <Control:TabItem Title="Tab 5" IsSelected="true">
-        <Label Text="This is tab page 5" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" TextColor="Gray"></Label>
+      <Control:TabItem Title="Tab 5" AutomationId="TabItem5">
+        <Label Text="This is tab page 5" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" TextColor="Gray" AutomationId="Label33"></Label>
       </Control:TabItem>
-      <Control:TabItem Title="Tab 6">
-        <Label Text="This is tab page 6" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" TextColor="Gray"></Label>
+      <Control:TabItem Title="Tab 6" AutomationId="TabItem6">
+        <Label Text="This is tab page 6" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" TextColor="Gray" AutomationId="Label34"></Label>
       </Control:TabItem>
-      <Control:TabItem Title="Tab 7 Long Title" >
-        <Label Text="This is tab page 7 with long title." BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" TextColor="Gray"></Label>
+      <Control:TabItem Title="Tab 7 Long Title" AutomationId="TabItem7">
+        <Label Text="This is tab page 7 with long title." BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" TextColor="Gray" AutomationId="Label35"></Label>
       </Control:TabItem>     
     </Control:Tab.TabItems>
   </Control:Tab>

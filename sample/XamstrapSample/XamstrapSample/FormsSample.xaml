@@ -4,69 +4,69 @@
              x:Class="XamstrapSample.FormsSample"
              xmlns:Control="clr-namespace:Xamstrap;assembly=Xamstrap"
              xmlns:Attached="clr-namespace:Xamstrap.AttachedProperties;assembly=Xamstrap" Title="Forms">
-  <ScrollView>
-    <StackLayout>
+  <ScrollView AutomationId="Scroll3">
+    <StackLayout AutomationId="Stack12">
       <!--Form Basic-->
-      <Label Text="Example: Form Basic" TextColor="Black" FontSize="30" Margin="10,10,0,0"></Label>
-      <Label Text="Using form-basic class a simple basic form will be create, where elements are stacked." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
+      <Label AutomationId="Label44" Text="Example: Form Basic" TextColor="Black" FontSize="30" Margin="10,10,0,0"></Label>
+      <Label AutomationId="Label45" Text="Using form-basic class a simple basic form will be create, where elements are stacked." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
 
-      <Control:Div Attached:ResponsiveProperty.Class="form-basic" >
+      <Control:Div Attached:ResponsiveProperty.Class="form-basic" AutomationId="Div20">
        
-        <Label Text="Email Address"  FontSize="17"></Label>
-        <Entry Placeholder="Email"></Entry>
+        <Label Text="Email Address"  FontSize="17" AutomationId="Label46"></Label>
+        <Entry Placeholder="Email" AutomationId="Entry1"></Entry>
         
-        <Label Text="Password"  FontSize="17"></Label>
-        <Entry Placeholder="Password" IsPassword="True"></Entry>
+        <Label Text="Password"  FontSize="17" AutomationId="Label47"></Label>
+        <Entry Placeholder="Password" IsPassword="True" AutomationId="Entry2"></Entry>
         
-        <Button Text="Submit" Attached:ResponsiveProperty.Class="btn-sm btn-primary"></Button>
+        <Button Text="Submit" Attached:ResponsiveProperty.Class="btn-sm btn-primary" AutomationId="Button29"></Button>
       </Control:Div>
 
       <!--Form Inline-->
-      <Label Text="Example: Form Inline" TextColor="Black" FontSize="30" Margin="10,20,0,0"></Label>
-      <Label Text="Using form-inline class an inline form will be created, where elements are stacked for extra small(xs), small(sm) screen size. For medium(md), large(lg) and extra large(xl) screen size elements are placed side-by-side until the screen edge and the remaining wrap to new line." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
+      <Label Text="Example: Form Inline" TextColor="Black" FontSize="30" Margin="10,20,0,0" AutomationId="Label48"></Label>
+      <Label Text="Using form-inline class an inline form will be created, where elements are stacked for extra small(xs), small(sm) screen size. For medium(md), large(lg) and extra large(xl) screen size elements are placed side-by-side until the screen edge and the remaining wrap to new line." TextColor="Black" FontSize="15" Margin="10,0,0,10" AutomationId="Label49"></Label>
 
-      <Control:Div Attached:ResponsiveProperty.Class="form-inline">
-        <Label Text="First Name" Margin="0,20,0,0"  FontSize="17"></Label>
-        <Entry Placeholder="Ex. John"  Margin="0,10,0,0" WidthRequest="150"></Entry>
+      <Control:Div Attached:ResponsiveProperty.Class="form-inline" AutomationId="Div21">
+        <Label Text="First Name" Margin="0,20,0,0"  FontSize="17" AutomationId="Label50"></Label>
+        <Entry Placeholder="Ex. John"  Margin="0,10,0,0" WidthRequest="150" AutomationId="Entry3"></Entry>
 
-        <Label Text="Last Name" Margin="0,20,0,0"  FontSize="17"></Label>
-        <Entry Placeholder="Ex. Doe"  Margin="0,10,0,0" WidthRequest="150"></Entry>
+        <Label Text="Last Name" Margin="0,20,0,0"  FontSize="17" AutomationId="Label51"></Label>
+        <Entry Placeholder="Ex. Doe"  Margin="0,10,0,0" WidthRequest="150" AutomationId="Entry4"></Entry>
         
-         <Label Text="User Name" Margin="0,20,0,0"  FontSize="17"></Label>
-        <Entry Placeholder="Ex. john7676"  Margin="0,10,0,0" WidthRequest="150"></Entry>
+         <Label Text="User Name" Margin="0,20,0,0"  FontSize="17" AutomationId="Label52"></Label>
+        <Entry Placeholder="Ex. john7676"  Margin="0,10,0,0" WidthRequest="150" AutomationId="Entry5"></Entry>
 
-        <Label Text="Email" Margin="0,20,0,0"  FontSize="17"></Label>
-        <Entry Placeholder="Ex. johndoe@example.com"  Margin="0,10,0,0" WidthRequest="150"></Entry>
+        <Label Text="Email" Margin="0,20,0,0"  FontSize="17" AutomationId="Label53"></Label>
+        <Entry Placeholder="Ex. johndoe@example.com"  Margin="0,10,0,0" WidthRequest="150" AutomationId="Entry6"></Entry>
 
-        <Button Text="Sign Up" Attached:ResponsiveProperty.Class="btn-sm btn-primary"></Button>
+        <Button Text="Sign Up" Attached:ResponsiveProperty.Class="btn-sm btn-primary" AutomationId="Button30"></Button>
       </Control:Div>
 
       <!--Form Horizontal-->
-      <Label Text="Example: Form Horizontal" TextColor="Black" FontSize="30" Margin="10,0,0,0"></Label>
-      <Label Text="Use Xamstrap's predefined grid classes to align labels and entries in a horizontal layout by adding form-horizontal." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
+      <Label Text="Example: Form Horizontal" TextColor="Black" FontSize="30" Margin="10,0,0,0" AutomationId="Label54"></Label>
+      <Label Text="Use Xamstrap's predefined grid classes to align labels and entries in a horizontal layout by adding form-horizontal." TextColor="Black" FontSize="15" Margin="10,0,0,10" AutomationId="Label55"></Label>
 
-      <Control:Div Attached:ResponsiveProperty.Class="form-horizontal">
-        <Label Text="Name" Attached:ResponsiveProperty.Class="col-sm-3"  FontSize="17"></Label>
-        <Entry Placeholder="Full Name" Attached:ResponsiveProperty.Class="col-sm-9"></Entry>
+      <Control:Div Attached:ResponsiveProperty.Class="form-horizontal" AutomationId="Div22">
+        <Label Text="Name" Attached:ResponsiveProperty.Class="col-sm-3"  FontSize="17" AutomationId="Label56"></Label>
+        <Entry Placeholder="Full Name" Attached:ResponsiveProperty.Class="col-sm-9" AutomationId="Entry7"></Entry>
       </Control:Div>
       
-      <Control:Div Attached:ResponsiveProperty.Class="form-horizontal">
-        <Label Text="Email" Attached:ResponsiveProperty.Class="col-sm-3"  FontSize="17"></Label>
-        <Entry Placeholder="Email Address" Attached:ResponsiveProperty.Class="col-sm-9"></Entry>
+      <Control:Div Attached:ResponsiveProperty.Class="form-horizontal" AutomationId="Div23">
+        <Label Text="Email" Attached:ResponsiveProperty.Class="col-sm-3"  FontSize="17" AutomationId="Label57"></Label>
+        <Entry Placeholder="Email Address" Attached:ResponsiveProperty.Class="col-sm-9" AutomationId="Entry8"></Entry>
       </Control:Div>
 
-      <Control:Div Attached:ResponsiveProperty.Class="row">
-        <Button Text="Send Invitation" Attached:ResponsiveProperty.Class=" col-sm-offset-3 btn-sm btn-primary" WidthRequest="200"></Button>
+      <Control:Div Attached:ResponsiveProperty.Class="row" AutomationId="Div24">
+        <Button Text="Send Invitation" Attached:ResponsiveProperty.Class=" col-sm-offset-3 btn-sm btn-primary" WidthRequest="200" AutomationId="Button31"></Button>
       </Control:Div>
 
       <!--Input Group-->
-      <Label Text="Example: Input Group" TextColor="Black" FontSize="30" Margin="10,20,0,0"></Label>
-      <Label Text="Use Xamstrap's predefined grid classes to align labels, entries and buttons in a horizontal layout by adding input-group." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
+      <Label Text="Example: Input Group" TextColor="Black" FontSize="30" Margin="10,20,0,0" AutomationId="Label58"></Label>
+      <Label Text="Use Xamstrap's predefined grid classes to align labels, entries and buttons in a horizontal layout by adding input-group." TextColor="Black" FontSize="15" Margin="10,0,0,10" AutomationId="Label59" ></Label>
 
-      <Control:Div Attached:ResponsiveProperty.Class="input-group" Margin="0,0,0,10">
-        <Label Text="@" FontSize="Large"></Label>
-        <Entry Placeholder="Email" Margin="0,10,0,0"></Entry>
-        <Button Text="Submit" Attached:ResponsiveProperty.Class="btn-sm btn-primary" WidthRequest="100"></Button>
+      <Control:Div Attached:ResponsiveProperty.Class="input-group" Margin="0,0,0,10" AutomationId="Div25">
+        <Label Text="@" FontSize="Large" AutomationId="Label60"></Label>
+        <Entry Placeholder="Email" Margin="0,10,0,0" AutomationId="Entry9"></Entry>
+                <Button Text="Submit" Attached:ResponsiveProperty.Class="btn-sm btn-primary" WidthRequest="100" AutomationId="Button32"></Button>
       </Control:Div>
     </StackLayout>
   </ScrollView>

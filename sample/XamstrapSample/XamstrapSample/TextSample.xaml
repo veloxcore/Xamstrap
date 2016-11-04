@@ -4,17 +4,17 @@
              x:Class="XamstrapSample.TextSample"
              xmlns:Control="clr-namespace:Xamstrap;assembly=Xamstrap"
              xmlns:Attached="clr-namespace:Xamstrap.AttachedProperties;assembly=Xamstrap" Title="Text">
-  <StackLayout>
+  <StackLayout AutomationId="Stack13">
     <!--Stacked-to-horizontal-->
-    <Label Text="Example: Text Style" TextColor="Black" FontSize="30" Margin="10,10,0,0"></Label>
-    <Label Text="Using classes like text-muted, text-primary, text-success, text-info, text-warning, text-danger, you can create text with different color." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
-
-    <Label HorizontalOptions="Center" FontSize="20" Text="text-muted - Used to create text with muted color." Attached:ResponsiveProperty.Class="text-muted" />
-    <Label HorizontalOptions="Center" FontSize="20" Text="text-primary - Used to create text with primary color." Attached:ResponsiveProperty.Class="text-primary"/>
-    <Label HorizontalOptions="Center" FontSize="20" Text="text-success - Used to create text with success color." Attached:ResponsiveProperty.Class="text-success"/>
-    <Label HorizontalOptions="Center" FontSize="20" Text="text-info - Used to create text with info color." Attached:ResponsiveProperty.Class="text-info" />
-    <Label HorizontalOptions="Center" FontSize="20" Text="text-warning - Used to create text with warning color." Attached:ResponsiveProperty.Class="text-warning"/>
-    <Label HorizontalOptions="Center" FontSize="20" Text="text-danger - Used to create text with muted color." Attached:ResponsiveProperty.Class="text-danger" />
+    <Label AutomationId="Label61" Text="Example: Text Style" TextColor="Black" FontSize="30" Margin="10,10,0,0"></Label>
+    <Label AutomationId="Label62" Text="Using classes like text-muted, text-primary, text-success, text-info, text-warning, text-danger, you can create text with different color." TextColor="Black" FontSize="15" Margin="10,0,0,10"></Label>
+           
+    <Label AutomationId="Label63" HorizontalOptions="Center" FontSize="20" Text="text-muted - Used to create text with muted color." Attached:ResponsiveProperty.Class="text-muted" />
+    <Label AutomationId="Label64" HorizontalOptions="Center" FontSize="20" Text="text-primary - Used to create text with primary color." Attached:ResponsiveProperty.Class="text-primary"/>
+    <Label AutomationId="Label65" HorizontalOptions="Center" FontSize="20" Text="text-success - Used to create text with success color." Attached:ResponsiveProperty.Class="text-success"/>
+    <Label AutomationId="Label66" HorizontalOptions="Center" FontSize="20" Text="text-info - Used to create text with info color." Attached:ResponsiveProperty.Class="text-info" />
+    <Label AutomationId="Label67" HorizontalOptions="Center" FontSize="20" Text="text-warning - Used to create text with warning color." Attached:ResponsiveProperty.Class="text-warning"/>
+    <Label AutomationId="Label68" HorizontalOptions="Center" FontSize="20" Text="text-danger - Used to create text with muted color." Attached:ResponsiveProperty.Class="text-danger" />
   </StackLayout>
 </ContentPage>
 

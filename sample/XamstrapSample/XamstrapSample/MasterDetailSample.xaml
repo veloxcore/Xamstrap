@@ -3,36 +3,36 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamstrapSample.MasterDetailSample"
               xmlns:Control="clr-namespace:Xamstrap;assembly=Xamstrap" Title="Responsive Master Detail">
-  <Control:ResponsiveMasterDetail x:Name="masterDetail" BackgroundColor="White" Title="Primary" IsMasterVisible="{Binding IsMasterVisible, Mode=TwoWay}">
+  <Control:ResponsiveMasterDetail x:Name="masterDetail" BackgroundColor="White" Title="Primary" IsMasterVisible="{Binding IsMasterVisible, Mode=TwoWay}" AutomationId="MasterDetail">
 
     <!--Master Header-->
-    <Control:ResponsiveMasterDetail.MasterHeader>
-      <Grid WidthRequest="400">
-        <Label Text="Master Header" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"></Label>
+    <Control:ResponsiveMasterDetail.MasterHeader AutomationId="MasterHeader">
+      <Grid WidthRequest="400" AutomationId="Grid24">
+        <Label Text="Master Header" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black" AutomationId="Label25"></Label>
       </Grid>
     </Control:ResponsiveMasterDetail.MasterHeader>
 
     <!--detail Header-->
-    <Control:ResponsiveMasterDetail.DetailHeader>
-      <Grid>
-        <Label Text="Detail Header" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"></Label>
+    <Control:ResponsiveMasterDetail.DetailHeader AutomationId="DetailHeader">
+      <Grid AutomationId="Grid25">
+        <Label Text="Detail Header" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black" AutomationId="Label26"></Label>
       </Grid>
     </Control:ResponsiveMasterDetail.DetailHeader>
 
     <!--Master Content-->
-    <Control:ResponsiveMasterDetail.MasterContent>
-      <StackLayout Orientation="Vertical">
+    <Control:ResponsiveMasterDetail.MasterContent AutomationId="MasterContent">
+      <StackLayout Orientation="Vertical" AutomationId="Stack9">
         <ListView x:Name="CustomerList" ItemsSource="{Binding Emails}" HorizontalOptions="StartAndExpand" SeparatorVisibility="None"
-                            SelectedItem="{Binding SelectedEmail, Mode=TwoWay}">
+                            SelectedItem="{Binding SelectedEmail, Mode=TwoWay}" AutomationId="List1">
           <ListView.ItemTemplate>
             <DataTemplate>
               <!--<customer:CustomerCell />-->
               <ViewCell>
-                <Grid Padding="10,0,10,0" Margin="0">
+                <Grid Padding="10,0,10,0" Margin="0" AutomationId="Grid26">
                   <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                   </Grid.ColumnDefinitions>
-                  <Label Text="{Binding .}"  TextColor="Black" Margin="0" VerticalOptions="Center" />
+                  <Label Text="{Binding .}"  TextColor="Black" Margin="0" VerticalOptions="Center" AutomationId="Label27"/>
                 </Grid>
               </ViewCell>
             </DataTemplate>
@@ -42,9 +42,9 @@
     </Control:ResponsiveMasterDetail.MasterContent>
 
     <!--Detail Content-->
-    <Control:ResponsiveMasterDetail.DetailContent>
-      <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
-        <Label Text="{Binding SelectedEmail,StringFormat='Selected Email: {0}'}" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+    <Control:ResponsiveMasterDetail.DetailContent AutomationId="DetailContent">
+      <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" AutomationId="Stack10">
+        <Label Text="{Binding SelectedEmail,StringFormat='Selected Email: {0}'}" HorizontalOptions="Center" VerticalOptions="Center" AutomationId="Label28"></Label>
       </StackLayout>
     </Control:ResponsiveMasterDetail.DetailContent>
 
