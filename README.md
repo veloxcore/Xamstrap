@@ -1,6 +1,4 @@
 # Xamstrap
-# Welcome to the Xamstrap
-
 [![NuGet](https://img.shields.io/badge/nuget-v0.5.0--pre05-yellow.svg)](https://www.nuget.org/packages/Xamstrap/)
 [![license](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/veloxcore/Xamstrap/blob/master/LICENSE)
 [![Maintenance](https://img.shields.io/maintenance/yes/2016.svg)](http://www.veloxcore.com)
