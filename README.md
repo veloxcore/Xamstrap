@@ -7,16 +7,19 @@ A Xamarin Forms responsive toolkit. It is currently in pre-release as we are tes
 
 ### Below are features already in the toolkit.
 
-* Grid System(A grid based responsive layout)
-* Responsive Master detail (very interesting)
-* Responsive Tab
-* Styles (primary, success, danger etc)` 
-* Button Style
-* Label Style
-* Screen size based Visible-hidden processing
-* Forms (basic, horizontal, and inline)
-* Button groups (basic and justified)
-* Input groups
+* [Grid System(A grid based responsive layout)](https://github.com/veloxcore/Xamstrap/wiki/Grid-System)
+* [Responsive Master detail (very interesting)](https://github.com/veloxcore/Xamstrap/wiki/Master-Detail)
+* [Responsive Tab](https://github.com/veloxcore/Xamstrap/wiki/Tab)
+* [Button Style](https://github.com/veloxcore/Xamstrap/wiki/Buttons#button-styles)
+* [Button Size](https://github.com/veloxcore/Xamstrap/wiki/Buttons#button-size)
+* [Button groups (basic and justified)](https://github.com/veloxcore/Xamstrap/wiki/Buttons#button-group)
+* [Label Style](https://github.com/veloxcore/Xamstrap/wiki/Text)
+* [Screen size based Visible-hidden processing](https://github.com/veloxcore/Xamstrap/wiki/Visibility)
+* [Forms (basic, horizontal, and inline)](https://github.com/veloxcore/Xamstrap/wiki/Forms)
+* [Input groups](https://github.com/veloxcore/Xamstrap/wiki/Forms#input-group)
+
+# Documentation
+Xamstrap's full documentation ias availbale at [ Xamstrap Documentation](https://github.com/veloxcore/Xamstrap/wiki).
 
 # Nuget Packages
 You can find Nuget package at [Xamstrap](https://www.nuget.org/packages/Xamstrap/).

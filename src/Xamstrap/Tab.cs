@@ -155,7 +155,7 @@ namespace Xamstrap
             _tabHeaderHolder.RowDefinitions = new RowDefinitionCollection
             {
                 new RowDefinition { Height = GridLength.Auto},
-                new RowDefinition {Height= 2 }
+                new RowDefinition {Height= 3 }
             };
             _tabHeaderHolder.RowSpacing = 0;
 
@@ -166,7 +166,7 @@ namespace Xamstrap
 
 
             _selectedTabIndicator = new BoxView();
-            _selectedTabIndicator.HeightRequest = Device.OnPlatform<double>(3, 2, 0);
+            _selectedTabIndicator.HeightRequest = Device.OnPlatform<double>(3, 3, 0);
 
             _seperator = new BoxView();
             _seperator.HeightRequest = 1;
