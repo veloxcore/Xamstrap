@@ -21,6 +21,9 @@ A Xamarin Forms responsive toolkit. It is currently in pre-release as we are tes
 # Documentation
 Xamstrap's full documentation ias availbale at [ Xamstrap Documentation](https://github.com/veloxcore/Xamstrap/wiki).
 
+# Sample Application
+A sample application including all the features of Xamstrap with sample code. [Download Sample Application](https://www.dropbox.com/s/w12czv9e129nwep/Xamstrap_Sample_1.0%5B1%5D.apk?dl=0)
+
 # Nuget Packages
 You can find Nuget package at [Xamstrap](https://www.nuget.org/packages/Xamstrap/).
 
